@@ -23,34 +23,31 @@ header {
 
 .header-top {
   background: white;
-  color: #000;
   text-align: center;
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid #e0e0e0;
+  padding: 1.5rem 1rem;
 }
 
-.header-top p {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  letter-spacing: 0.5px;
+.header-logo {
+  max-width: 600px;
+  width: 90%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .header-main {
   background: var(--primary-color);
   color: white;
   text-align: center;
-  padding: 1.5rem 1rem;
+  padding: 0.75rem 1rem;
 }
 
-.header-main h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 3.5rem;
+.header-main p {
+  font-size: 1rem;
+  font-weight: 600;
   margin: 0;
-  font-weight: 400;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-  letter-spacing: 2px;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.5px;
 }
 
 main {
@@ -345,12 +342,16 @@ footer a:hover {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .header-top p {
-    font-size: 0.85rem;
+  .header-top {
+    padding: 1rem 0.5rem;
   }
 
-  .header-main h1 {
-    font-size: 2.5rem;
+  .header-logo {
+    max-width: 400px;
+  }
+
+  .header-main p {
+    font-size: 0.85rem;
   }
 
   section {
