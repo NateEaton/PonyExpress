@@ -426,10 +426,12 @@ footer a:hover {
     min-width: 80px;
   }
 
+  /*
   #pdf-frame {
     height: 70vh;
   }
-
+  */
+  
   #pdf-title {
     font-size: 1.2rem;
   }
