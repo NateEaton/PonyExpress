@@ -1,7 +1,7 @@
 :root {
-  --primary-color: #0066CC;
-  --primary-color-dark: #0052a3;
-  --primary-color-light: rgba(0, 102, 204, 0.3);
+  --primary-color: #1846A3;
+  --primary-color-dark: #123570;
+  --primary-color-light: rgba(24, 70, 163, 0.3);
 }
 
 * {
@@ -292,6 +292,84 @@ kbd {
   font-size: 0.9em;
 }
 
+/* Contribution Form Styles */
+.contribute-section {
+  background: #f8f9fa;
+  border: 2px solid var(--primary-color);
+}
+
+.contribute-section h2 {
+  color: var(--primary-color);
+}
+
+.contribute-section p {
+  line-height: 1.8;
+}
+
+#contribute-form {
+  margin-top: 1.5rem;
+  max-width: 600px;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-color-light);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: var(--primary-color-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.submit-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 footer {
   text-align: center;
   padding: 2rem 1rem;
@@ -373,6 +451,14 @@ footer a:hover {
 
   #pdf-title {
     font-size: 1.2rem;
+  }
+
+  #contribute-form {
+    max-width: 100%;
+  }
+
+  .submit-btn {
+    width: 100%;
   }
 }
 
