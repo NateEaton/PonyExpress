@@ -314,6 +314,16 @@ kbd {
   line-height: 1.8;
 }
 
+.readme-link {
+  color: var(--primary-color);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.readme-link:hover {
+  color: var(--primary-color-dark);
+}
+
 .contact-email {
   color: var(--primary-color);
   text-decoration: none;
