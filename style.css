@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #0066CC;
+  --primary-color-dark: #0052a3;
+  --primary-color-light: rgba(0, 102, 204, 0.3);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -32,7 +38,7 @@ header {
 }
 
 .header-main {
-  background: #0C2577;
+  background: var(--primary-color);
   color: white;
   text-align: center;
   padding: 1.5rem 1rem;
@@ -62,10 +68,10 @@ section {
 }
 
 h2 {
-  color: #0C2577;
+  color: var(--primary-color);
   margin-bottom: 1rem;
   font-size: 1.8rem;
-  border-bottom: 2px solid #0C2577;
+  border-bottom: 2px solid var(--primary-color);
   padding-bottom: 0.5rem;
 }
 
@@ -90,7 +96,7 @@ h2 {
   scroll-behavior: smooth;
   padding: 1rem 0.5rem;
   scrollbar-width: thin;
-  scrollbar-color: #0C2577 #f1f1f1;
+  scrollbar-color: var(--primary-color) #f1f1f1;
 }
 
 .carousel::-webkit-scrollbar {
@@ -103,12 +109,12 @@ h2 {
 }
 
 .carousel::-webkit-scrollbar-thumb {
-  background: #0C2577;
+  background: var(--primary-color);
   border-radius: 4px;
 }
 
 .carousel::-webkit-scrollbar-thumb:hover {
-  background: #0052a3;
+  background: var(--primary-color-dark);
 }
 
 .carousel-item {
@@ -136,8 +142,8 @@ h2 {
 }
 
 .carousel img:hover {
-  border-color: #0C2577;
-  box-shadow: 0 6px 16px rgba(0, 102, 204, 0.3);
+  border-color: var(--primary-color);
+  box-shadow: 0 6px 16px var(--primary-color-light);
 }
 
 .issue-date {
@@ -148,7 +154,7 @@ h2 {
 }
 
 .carousel-nav {
-  background: #0C2577;
+  background: var(--primary-color);
   color: white;
   border: none;
   width: 40px;
@@ -162,7 +168,7 @@ h2 {
 }
 
 .carousel-nav:hover:not(:disabled) {
-  background: #0052a3;
+  background: var(--primary-color-dark);
   transform: scale(1.1);
 }
 
@@ -231,7 +237,7 @@ h2 {
 }
 
 .share-btn {
-  background: #0C2577;
+  background: #0066cc;
   color: white;
 }
 
@@ -250,12 +256,12 @@ h2 {
 }
 
 .close-btn {
-  background: #0C2577;
+  background: var(--primary-color);
   color: white;
 }
 
 .close-btn:hover {
-  background: #0052a3;
+  background: var(--primary-color-dark);
 }
 
 #pdf-frame {
@@ -291,11 +297,11 @@ footer {
   padding: 2rem 1rem;
   background: white;
   margin-top: 2rem;
-  border-top: 2px solid #0C2577;
+  border-top: 2px solid var(--primary-color);
 }
 
 footer a {
-  color: #0C2577;
+  color: var(--primary-color);
   text-decoration: none;
 }
 
