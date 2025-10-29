@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Pony Express</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -26,26 +27,48 @@
 
     <section>
       <h2>Archive Carousel</h2>
-      <div class="carousel">
-        <a href="#" data-pdf="issues/1974-09-11.pdf" class="pdf-link"><img src="issues/covers/1974-09-11.png" alt="September 11, 1974 Issue" /></a>
+      <div class="carousel-container">
+        <button class="carousel-nav prev" aria-label="Previous">‹</button>
+        <div class="carousel-wrapper">
+          <div class="carousel">
+            <div class="carousel-item">
+              <a href="#" data-pdf="issues/1974-09-11.pdf" data-date="September 11, 1974" class="pdf-link">
+                <img src="issues/covers/1974-09-11.png" alt="September 11, 1974 Issue" />
+              </a>
+              <p class="issue-date">September 11, 1974</p>
+            </div>
+            <!-- Add more carousel items here as you scan more issues -->
+          </div>
+        </div>
+        <button class="carousel-nav next" aria-label="Next">›</button>
       </div>
     </section>
 
     <!-- PDF Viewer Frame (hidden by default) -->
     <section id="pdf-viewer-section" style="display: none;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+      <div class="viewer-controls">
         <h2 id="pdf-title">Viewing Issue</h2>
-        <button id="close-viewer" style="padding: 0.5rem 1rem; cursor: pointer; background: #c41e3a; color: white; border: none; border-radius: 4px;">Close</button>
+        <div class="viewer-buttons">
+          <button id="share-btn" class="control-btn share-btn" title="Share this issue">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M13 7c-.7 0-1.3.3-1.8.7L6.9 5.8c.1-.3.1-.5.1-.8 0-.3 0-.5-.1-.8l4.4-1.9c.4.4 1 .7 1.7.7 1.4 0 2.5-1.1 2.5-2.5S14.4 0 13 0s-2.5 1.1-2.5 2.5c0 .3 0 .5.1.8L6.2 5.2C5.8 4.8 5.2 4.5 4.5 4.5c-1.4 0-2.5 1.1-2.5 2.5S3.1 9.5 4.5 9.5c.7 0 1.3-.3 1.8-.7l4.4 1.9c-.1.3-.1.5-.1.8 0 1.4 1.1 2.5 2.5 2.5s2.5-1.1 2.5-2.5S14.4 11.5 13 11.5z"/>
+            </svg>
+            Share
+          </button>
+          <button id="open-new-tab-btn" class="control-btn">Open in New Tab</button>
+          <button id="close-viewer" class="control-btn close-btn">Close</button>
+        </div>
       </div>
-      <iframe id="pdf-frame" src="" style="width: 100%; height: 800px; border: 2px solid #ddd; border-radius: 4px;"></iframe>
+      <iframe id="pdf-frame" src="" title="PDF Viewer"></iframe>
     </section>
 
     <section>
       <h2>How to Use</h2>
       <ul>
-        <li>Use the left/right scroll to browse covers.</li>
+        <li>Use the left/right arrows to browse covers.</li>
         <li>Click a cover to view the full PDF below.</li>
         <li>Use <kbd>Ctrl+F</kbd> (or <kbd>Cmd+F</kbd> on Mac) inside the PDF to search by name or topic.</li>
+        <li>Click "Share" to copy a link to a specific issue.</li>
       </ul>
     </section>
   </main>
@@ -56,40 +79,134 @@
     Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>.
     </p>
   </footer>
-  
+
   <script data-goatcounter="https://neatonjr.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
   <script>
+    // Carousel functionality
+    const carousel = document.querySelector('.carousel');
+    const prevBtn = document.querySelector('.carousel-nav.prev');
+    const nextBtn = document.querySelector('.carousel-nav.next');
+    let scrollAmount = 0;
+
+    function updateNavButtons() {
+      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+      prevBtn.disabled = scrollAmount <= 0;
+      nextBtn.disabled = scrollAmount >= maxScroll;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      const itemWidth = carousel.querySelector('.carousel-item').offsetWidth;
+      scrollAmount = Math.max(0, scrollAmount - itemWidth - 20); // 20 is gap
+      carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+      setTimeout(updateNavButtons, 300);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      const itemWidth = carousel.querySelector('.carousel-item').offsetWidth;
+      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+      scrollAmount = Math.min(maxScroll, scrollAmount + itemWidth + 20);
+      carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+      setTimeout(updateNavButtons, 300);
+    });
+
+    carousel.addEventListener('scroll', () => {
+      scrollAmount = carousel.scrollLeft;
+      updateNavButtons();
+    });
+
+    updateNavButtons();
+
     // PDF viewer functionality
     const pdfLinks = document.querySelectorAll('.pdf-link');
     const pdfViewerSection = document.getElementById('pdf-viewer-section');
     const pdfFrame = document.getElementById('pdf-frame');
     const pdfTitle = document.getElementById('pdf-title');
     const closeButton = document.getElementById('close-viewer');
-  
+    const openNewTabBtn = document.getElementById('open-new-tab-btn');
+    const shareBtn = document.getElementById('share-btn');
+    let currentPdfPath = '';
+    let currentIssueDate = '';
+
     pdfLinks.forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
-        const pdfPath = this.getAttribute('data-pdf');
-        const issueDate = this.querySelector('img').getAttribute('alt');
+        currentPdfPath = this.getAttribute('data-pdf');
+        currentIssueDate = this.getAttribute('data-date') || this.querySelector('img').getAttribute('alt');
         
         // Load PDF into iframe
-        pdfFrame.src = pdfPath;
-        pdfTitle.textContent = `Viewing: ${issueDate}`;
+        pdfFrame.src = currentPdfPath;
+        pdfTitle.textContent = `Viewing: ${currentIssueDate}`;
         
         // Show viewer section
         pdfViewerSection.style.display = 'block';
         
         // Smooth scroll to viewer
-        pdfViewerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(() => {
+          pdfViewerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
       });
     });
-  
+
     closeButton.addEventListener('click', function() {
       pdfViewerSection.style.display = 'none';
       pdfFrame.src = '';
+      currentPdfPath = '';
+    });
+
+    openNewTabBtn.addEventListener('click', function() {
+      if (currentPdfPath) {
+        window.open(currentPdfPath, '_blank');
+      }
+    });
+
+    shareBtn.addEventListener('click', async function() {
+      if (currentPdfPath) {
+        const shareUrl = `${window.location.origin}${window.location.pathname}?issue=${encodeURIComponent(currentPdfPath)}`;
+        
+        try {
+          if (navigator.share) {
+            // Use native share on mobile
+            await navigator.share({
+              title: `The Pony Express - ${currentIssueDate}`,
+              text: `Check out this issue of The Pony Express from ${currentIssueDate}`,
+              url: shareUrl
+            });
+          } else {
+            // Fallback: copy to clipboard
+            await navigator.clipboard.writeText(shareUrl);
+            
+            // Show feedback
+            const originalText = shareBtn.innerHTML;
+            shareBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M13.5 2L6 9.5 2.5 6"/></svg> Copied!';
+            shareBtn.style.background = '#28a745';
+            
+            setTimeout(() => {
+              shareBtn.innerHTML = originalText;
+              shareBtn.style.background = '';
+            }, 2000);
+          }
+        } catch (err) {
+          console.error('Share failed:', err);
+        }
+      }
+    });
+
+    // Check URL for shared issue on page load
+    window.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const sharedIssue = urlParams.get('issue');
+      
+      if (sharedIssue) {
+        const matchingLink = Array.from(pdfLinks).find(link => 
+          link.getAttribute('data-pdf') === sharedIssue
+        );
+        
+        if (matchingLink) {
+          matchingLink.click();
+        }
+      }
     });
   </script>
-  
 </body>
 </html>
