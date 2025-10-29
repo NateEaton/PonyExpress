@@ -12,24 +12,39 @@ body {
 }
 
 header {
-  background: linear-gradient(135deg, #003DA5 0%, #0052D6 100%);
-  color: white;
-  text-align: center;
-  padding: 2rem 1rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+.header-top {
+  background: white;
+  color: #000;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-header p {
-  font-size: 1.1rem;
-  opacity: 0.95;
-  font-weight: 300;
+.header-top p {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.header-main {
+  background: #0066CC;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.header-main h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  margin: 0;
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  letter-spacing: 2px;
 }
 
 main {
@@ -47,10 +62,10 @@ section {
 }
 
 h2 {
-  color: #003DA5;
+  color: #0066CC;
   margin-bottom: 1rem;
   font-size: 1.8rem;
-  border-bottom: 2px solid #003DA5;
+  border-bottom: 2px solid #0066CC;
   padding-bottom: 0.5rem;
 }
 
@@ -75,7 +90,7 @@ h2 {
   scroll-behavior: smooth;
   padding: 1rem 0.5rem;
   scrollbar-width: thin;
-  scrollbar-color: #003DA5 #f1f1f1;
+  scrollbar-color: #0066CC #f1f1f1;
 }
 
 .carousel::-webkit-scrollbar {
@@ -88,12 +103,12 @@ h2 {
 }
 
 .carousel::-webkit-scrollbar-thumb {
-  background: #003DA5;
+  background: #0066CC;
   border-radius: 4px;
 }
 
 .carousel::-webkit-scrollbar-thumb:hover {
-  background: #002a73;
+  background: #0052a3;
 }
 
 .carousel-item {
@@ -121,8 +136,8 @@ h2 {
 }
 
 .carousel img:hover {
-  border-color: #003DA5;
-  box-shadow: 0 6px 16px rgba(0, 61, 165, 0.3);
+  border-color: #0066CC;
+  box-shadow: 0 6px 16px rgba(0, 102, 204, 0.3);
 }
 
 .issue-date {
@@ -133,7 +148,7 @@ h2 {
 }
 
 .carousel-nav {
-  background: #003DA5;
+  background: #0066CC;
   color: white;
   border: none;
   width: 40px;
@@ -147,7 +162,7 @@ h2 {
 }
 
 .carousel-nav:hover:not(:disabled) {
-  background: #002a73;
+  background: #0052a3;
   transform: scale(1.1);
 }
 
@@ -235,12 +250,12 @@ h2 {
 }
 
 .close-btn {
-  background: #003DA5;
+  background: #0066CC;
   color: white;
 }
 
 .close-btn:hover {
-  background: #002a73;
+  background: #0052a3;
 }
 
 #pdf-frame {
@@ -276,11 +291,11 @@ footer {
   padding: 2rem 1rem;
   background: white;
   margin-top: 2rem;
-  border-top: 2px solid #003DA5;
+  border-top: 2px solid #0066CC;
 }
 
 footer a {
-  color: #003DA5;
+  color: #0066CC;
   text-decoration: none;
 }
 
@@ -290,12 +305,12 @@ footer a:hover {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 1.8rem;
+  .header-top p {
+    font-size: 0.85rem;
   }
 
-  header p {
-    font-size: 0.95rem;
+  .header-main h1 {
+    font-size: 2.5rem;
   }
 
   section {
