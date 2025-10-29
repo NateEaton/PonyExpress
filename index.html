@@ -46,6 +46,27 @@
     Content © North Mesquite High School Class of 1975. Scans and archive by alumni volunteers.
     Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>.
     </p>
+    <div id="view-counter" style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;">
+      Views: <span id="count">loading...</span>
+    </div>
   </footer>
+
+  <script>
+    // Replace 'nateeaton-ponyexpress' with your GitHub username and repo
+    const counterKey = 'nateeaton-ponyexpress';
+
+    async function updateCounter() {
+      try {
+        const response = await fetch(`https://api.countapi.xyz/hit/${counterKey}/visits`);
+        const data = await response.json();
+        document.getElementById('count').textContent = data.value.toLocaleString();
+      } catch (e) {
+        document.getElementById('count').textContent = '—';
+      }
+    }
+
+    updateCounter();
+  </script>
 </body>
 </html>
+
