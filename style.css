@@ -272,12 +272,10 @@ h2 {
   background: var(--primary-color-dark);
 }
 
-/* Replace the #pdf-frame rule with this: */
-
 #pdf-frame {
   width: 100%;
   aspect-ratio: 8.5 / 11;
-  max-height: 85vh;
+  /* max-height: 85vh; */
   border: 2px solid #ddd;
   border-radius: 4px;
   background: white;
