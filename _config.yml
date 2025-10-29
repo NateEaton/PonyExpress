@@ -1,0 +1,12 @@
+title: "The Pony Express"
+description: "Digitized archive of the North Mesquite High School newspaper (1974–1975)."
+author: "North Mesquite High School Class of 1975"
+theme: null
+markdown: kramdown
+plugins: []
+include: ["_config.yml"]
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: null
