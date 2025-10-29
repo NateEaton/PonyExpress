@@ -24,12 +24,12 @@ header {
 .header-top {
   background: white;
   text-align: center;
-  padding: 1.5rem 1rem;
+  padding: 2rem 1rem 1.5rem;
 }
 
 .header-logo {
-  max-width: 600px;
-  width: 90%;
+  max-width: 480px;
+  width: 80%;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -343,11 +343,12 @@ footer a:hover {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .header-top {
-    padding: 1rem 0.5rem;
+    padding: 1.5rem 0.5rem 1rem;
   }
 
   .header-logo {
-    max-width: 400px;
+    max-width: 280px;
+    width: 85%;
   }
 
   .header-main p {
@@ -424,6 +425,15 @@ footer a:hover {
   section {
     padding: 1rem;
     margin-bottom: 1rem;
+  }
+
+  .header-logo {
+    max-width: 240px;
+    width: 90%;
+  }
+
+  .header-main p {
+    font-size: 0.75rem;
   }
 
   .carousel img {
