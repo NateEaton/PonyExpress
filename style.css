@@ -274,7 +274,8 @@ h2 {
 
 #pdf-frame {
   width: 100%;
-  height: 800px;
+  aspect-ratio: 8.5 / 11;
+  max-height: 85vh;
   border: 2px solid #ddd;
   border-radius: 4px;
   background: white;
@@ -425,7 +426,7 @@ footer a:hover {
   }
 
   #pdf-frame {
-    height: 600px;
+    height: 70vh;
   }
 
   #pdf-title {
@@ -462,7 +463,7 @@ footer a:hover {
   }
 
   #pdf-frame {
-    height: 500px;
+    height: 60vh;
   }
 
   .viewer-buttons {
