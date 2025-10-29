@@ -72,6 +72,17 @@ h2 {
   padding-bottom: 0.5rem;
 }
 
+.archive-notice {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  margin: -0.5rem 0 1rem 0;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-left: 3px solid var(--primary-color);
+  border-radius: 2px;
+}
+
 /* Carousel Styles */
 .carousel-container {
   position: relative;
@@ -291,8 +302,8 @@ kbd {
 
 /* Contribution Section Styles */
 .contribute-section {
-  background: #f8f9fa;
-  border: 2px solid var(--primary-color);
+  background: #fafafa;
+  border: none;
 }
 
 .contribute-section h2 {
@@ -306,21 +317,21 @@ kbd {
 .contact-email {
   color: var(--primary-color);
   text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  background: white;
-  border: 2px solid var(--primary-color);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
   border-radius: 4px;
   display: inline-block;
   transition: all 0.2s ease;
 }
 
 .contact-email:hover {
-  background: var(--primary-color);
-  color: white;
+  background: #e8e8e8;
+  border-color: var(--primary-color);
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 footer {
