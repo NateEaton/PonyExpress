@@ -292,7 +292,7 @@ kbd {
   font-size: 0.9em;
 }
 
-/* Contribution Form Styles */
+/* Contribution Section Styles */
 .contribute-section {
   background: #f8f9fa;
   border: 2px solid var(--primary-color);
@@ -306,68 +306,24 @@ kbd {
   line-height: 1.8;
 }
 
-#contribute-form {
-  margin-top: 1.5rem;
-  max-width: 600px;
-}
-
-.form-group {
-  margin-bottom: 1.25rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
+.contact-email {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.1rem;
   font-weight: 600;
-  color: #333;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  background: white;
+  border: 2px solid var(--primary-color);
   border-radius: 4px;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: border-color 0.2s ease;
+  display: inline-block;
+  transition: all 0.2s ease;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px var(--primary-color-light);
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.submit-btn {
+.contact-email:hover {
   background: var(--primary-color);
   color: white;
-  border: none;
-  padding: 0.875rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  margin-top: 0.5rem;
-}
-
-.submit-btn:hover:not(:disabled) {
-  background: var(--primary-color-dark);
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.submit-btn:disabled {
-  background: #6c757d;
-  cursor: not-allowed;
-  opacity: 0.6;
 }
 
 footer {
@@ -453,12 +409,9 @@ footer a:hover {
     font-size: 1.2rem;
   }
 
-  #contribute-form {
-    max-width: 100%;
-  }
-
-  .submit-btn {
-    width: 100%;
+  .contact-email {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
   }
 }
 
