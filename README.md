@@ -8,7 +8,7 @@ A digital archive of North Mesquite High School's student newspaper from the 197
 
 ## Origin
 
-I'm Nathan Eaton, class of '75, and I served as school photographer during my senior year at North Mesquite High School. I kept all the issues of *The Pony Express* that I worked on, and they spent decades stored away in my attic. After attending our 50 year class reunion in 2024, I decided it was time to share these with my classmates.
+I'm Nathan Eaton, class of '75, and I served as school photographer during my senior year at North Mesquite High School. I kept all the issues of *The Pony Express* that I worked on, and they spent decades stored away in my attic. After attending our 50 year class reunion, I decided it was time to share these with my classmates.
 
 ## Purpose
 
@@ -146,11 +146,6 @@ We'll set you up as a repository collaborator and provide documentation on how t
 **Community Features:**
 - Linked social media group (Facebook?) for newspaper and yearbook staff
 - Platform for sharing memories and connecting with former staff members
-
-**Alternative Hosting:**
-- Explore hosting options that can handle larger archives (multiple years)
-- Identify perpetual hosting solutions that could outlast the original contributors
-- Ensure long-term accessibility if the archive expands to include later graduating classes
 
 ---
 
