@@ -20,22 +20,31 @@
         Each issue has been scanned and processed with OCR to make the text searchable within the PDF.
       </p>
       <p>
-        Click any cover below to open the full issue in a new tab.
+        Click any cover below to view the full issue.
       </p>
     </section>
 
     <section>
       <h2>Archive Carousel</h2>
       <div class="carousel">
-        <a href="issues/1974-09-11.pdf" target="_blank"><img src="issues/covers/1974-09-11.png" alt="September 11, 1974 Issue" /></a>
+        <a href="#" data-pdf="issues/1974-09-11.pdf" class="pdf-link"><img src="issues/covers/1974-09-11.png" alt="September 11, 1974 Issue" /></a>
       </div>
+    </section>
+
+    <!-- PDF Viewer Frame (hidden by default) -->
+    <section id="pdf-viewer-section" style="display: none;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 id="pdf-title">Viewing Issue</h2>
+        <button id="close-viewer" style="padding: 0.5rem 1rem; cursor: pointer; background: #c41e3a; color: white; border: none; border-radius: 4px;">Close</button>
+      </div>
+      <iframe id="pdf-frame" src="" style="width: 100%; height: 800px; border: 2px solid #ddd; border-radius: 4px;"></iframe>
     </section>
 
     <section>
       <h2>How to Use</h2>
       <ul>
         <li>Use the left/right scroll to browse covers.</li>
-        <li>Click a cover to open the full PDF (will open in a new tab).</li>
+        <li>Click a cover to view the full PDF below.</li>
         <li>Use <kbd>Ctrl+F</kbd> (or <kbd>Cmd+F</kbd> on Mac) inside the PDF to search by name or topic.</li>
       </ul>
     </section>
@@ -52,7 +61,7 @@
   </footer>
 
   <script>
-    // Replace 'nateeaton-ponyexpress' with your GitHub username and repo
+    // Counter functionality
     const counterKey = 'nateeaton-ponyexpress';
 
     async function updateCounter() {
@@ -66,7 +75,36 @@
     }
 
     updateCounter();
+
+    // PDF viewer functionality
+    const pdfLinks = document.querySelectorAll('.pdf-link');
+    const pdfViewerSection = document.getElementById('pdf-viewer-section');
+    const pdfFrame = document.getElementById('pdf-frame');
+    const pdfTitle = document.getElementById('pdf-title');
+    const closeButton = document.getElementById('close-viewer');
+
+    pdfLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const pdfPath = this.getAttribute('data-pdf');
+        const issueDate = this.querySelector('img').getAttribute('alt');
+        
+        // Load PDF into iframe
+        pdfFrame.src = pdfPath;
+        pdfTitle.textContent = `Viewing: ${issueDate}`;
+        
+        // Show viewer section
+        pdfViewerSection.style.display = 'block';
+        
+        // Smooth scroll to viewer
+        pdfViewerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    closeButton.addEventListener('click', function() {
+      pdfViewerSection.style.display = 'none';
+      pdfFrame.src = '';
+    });
   </script>
 </body>
 </html>
-
