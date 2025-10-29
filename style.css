@@ -32,7 +32,7 @@ header {
 }
 
 .header-main {
-  background: #0066CC;
+  background: #0C2577;
   color: white;
   text-align: center;
   padding: 1.5rem 1rem;
@@ -62,10 +62,10 @@ section {
 }
 
 h2 {
-  color: #0066CC;
+  color: #0C2577;
   margin-bottom: 1rem;
   font-size: 1.8rem;
-  border-bottom: 2px solid #0066CC;
+  border-bottom: 2px solid #0C2577;
   padding-bottom: 0.5rem;
 }
 
@@ -90,7 +90,7 @@ h2 {
   scroll-behavior: smooth;
   padding: 1rem 0.5rem;
   scrollbar-width: thin;
-  scrollbar-color: #0066CC #f1f1f1;
+  scrollbar-color: #0C2577 #f1f1f1;
 }
 
 .carousel::-webkit-scrollbar {
@@ -103,7 +103,7 @@ h2 {
 }
 
 .carousel::-webkit-scrollbar-thumb {
-  background: #0066CC;
+  background: #0C2577;
   border-radius: 4px;
 }
 
@@ -136,7 +136,7 @@ h2 {
 }
 
 .carousel img:hover {
-  border-color: #0066CC;
+  border-color: #0C2577;
   box-shadow: 0 6px 16px rgba(0, 102, 204, 0.3);
 }
 
@@ -148,7 +148,7 @@ h2 {
 }
 
 .carousel-nav {
-  background: #0066CC;
+  background: #0C2577;
   color: white;
   border: none;
   width: 40px;
@@ -231,7 +231,7 @@ h2 {
 }
 
 .share-btn {
-  background: #0066cc;
+  background: #0C2577;
   color: white;
 }
 
@@ -250,7 +250,7 @@ h2 {
 }
 
 .close-btn {
-  background: #0066CC;
+  background: #0C2577;
   color: white;
 }
 
@@ -291,11 +291,11 @@ footer {
   padding: 2rem 1rem;
   background: white;
   margin-top: 2rem;
-  border-top: 2px solid #0066CC;
+  border-top: 2px solid #0C2577;
 }
 
 footer a {
-  color: #0066CC;
+  color: #0C2577;
   text-decoration: none;
 }
 
