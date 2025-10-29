@@ -55,34 +55,18 @@
     Content © North Mesquite High School Class of 1975. Scans and archive by alumni volunteers.
     Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>.
     </p>
-    <div id="view-counter" style="margin-top: 0.5rem; font-size: 0.9rem; color: #555;">
-      Views: <span id="count">loading...</span>
-    </div>
   </footer>
-
+  
+  <script data-goatcounter="https://neatonjr.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
   <script>
-    // Counter functionality
-    const counterKey = 'nateeaton-ponyexpress';
-
-    async function updateCounter() {
-      try {
-        const response = await fetch(`https://api.countapi.dev/hit/nateeaton-ponyexpress/visits`);
-        const data = await response.json();
-        document.getElementById('count').textContent = data.value.toLocaleString();
-      } catch (e) {
-        document.getElementById('count').textContent = '—';
-      }
-    }
-
-    updateCounter();
-
     // PDF viewer functionality
     const pdfLinks = document.querySelectorAll('.pdf-link');
     const pdfViewerSection = document.getElementById('pdf-viewer-section');
     const pdfFrame = document.getElementById('pdf-frame');
     const pdfTitle = document.getElementById('pdf-title');
     const closeButton = document.getElementById('close-viewer');
-
+  
     pdfLinks.forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -100,11 +84,12 @@
         pdfViewerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
-
+  
     closeButton.addEventListener('click', function() {
       pdfViewerSection.style.display = 'none';
       pdfFrame.src = '';
     });
   </script>
+  
 </body>
 </html>
