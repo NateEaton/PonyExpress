@@ -386,9 +386,10 @@
     function initializeDataTable() {
       $('#pony-express-index').DataTable({
         ajax: 'index.json',
-        pageLength: 25,
+        pageLength: 10,
         lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
-        order: [[0, 'desc']], // Most recent first
+        lengthChange: true, // Show page length control
+        order: [[0, 'asc'], [4, 'asc']], // Sort by Date ascending, then Page ascending
         responsive: true,
         
         columns: [
@@ -466,7 +467,15 @@
         const pageNumber = e.target.dataset.page;
         const issueDate = e.target.dataset.date;
         
+        // Always reload the PDF even if viewer is already open
         loadPdfInViewer(pdfPath, issueDate, pageNumber);
+        
+        // Force iframe reload by setting src even if it's the same file
+        const fullPath = pageNumber ? `${pdfPath}#page=${pageNumber}` : pdfPath;
+        pdfFrame.src = ''; // Clear first to force reload
+        setTimeout(() => {
+          pdfFrame.src = fullPath;
+        }, 10);
         
         // Optional: collapse catalog on mobile
         if (window.innerWidth < 768) {
