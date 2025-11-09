@@ -482,28 +482,15 @@
         // Show viewer section
         pdfViewerSection.style.display = 'block';
         
-        // Force reload by using contentWindow.location for better navigation
-        // This works more reliably for PDF page anchors
-        if (pdfFrame.contentWindow) {
-          try {
-            pdfFrame.contentWindow.location.replace(fullPath);
-          } catch(e) {
-            // Fallback if cross-origin, use src replacement
-            const currentSrc = pdfFrame.src;
-            if (currentSrc && currentSrc.split('#')[0] === new URL(fullPath, window.location.href).href.split('#')[0]) {
-              // Same PDF, force reload
-              pdfFrame.src = 'about:blank';
-              setTimeout(() => {
-                pdfFrame.src = fullPath;
-              }, 50);
-            } else {
-              // Different PDF
-              pdfFrame.src = fullPath;
-            }
-          }
-        } else {
-          pdfFrame.src = fullPath;
-        }
+        // Force proper navigation by replacing the iframe element
+        // This is the most reliable way to ensure page anchors work
+        const newFrame = document.createElement('iframe');
+        newFrame.id = 'pdf-frame';
+        newFrame.title = 'PDF Viewer';
+        newFrame.src = fullPath;
+        
+        pdfFrame.parentNode.replaceChild(newFrame, pdfFrame);
+        pdfFrame = newFrame; // Update global reference
         
         // Scroll to viewer
         setTimeout(() => {
