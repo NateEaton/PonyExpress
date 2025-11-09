@@ -298,7 +298,13 @@
         e.preventDefault();
         const pdfPath = this.getAttribute('data-pdf');
         const issueDate = this.getAttribute('data-date');
-        loadPdfInViewer(pdfPath, issueDate, null);
+        
+        // On mobile, open PDF in a dedicated tab instead of iframe
+        if (window.innerWidth < 768) {
+          window.open(pdfPath, 'ponyExpressPDF');
+        } else {
+          loadPdfInViewer(pdfPath, issueDate, null);
+        }
       });
     });
 
@@ -352,12 +358,17 @@
       const sharedIssue = urlParams.get('issue');
       
       if (sharedIssue) {
-        const matchingLink = Array.from(pdfLinks).find(link => 
-          link.getAttribute('data-pdf') === sharedIssue
-        );
-        
-        if (matchingLink) {
-          matchingLink.click();
+        // On mobile, open directly in new tab
+        if (window.innerWidth < 768) {
+          window.open(sharedIssue, 'ponyExpressPDF');
+        } else {
+          const matchingLink = Array.from(pdfLinks).find(link => 
+            link.getAttribute('data-pdf') === sharedIssue
+          );
+          
+          if (matchingLink) {
+            matchingLink.click();
+          }
         }
       }
     });
