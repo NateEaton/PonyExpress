@@ -482,8 +482,15 @@
         // Show viewer section
         pdfViewerSection.style.display = 'block';
         
-        // Force navigation even if same PDF by adding timestamp to bypass cache
-        pdfFrame.src = fullPath + (fullPath.includes('?') ? '&' : '#') + 't=' + Date.now();
+        // Force proper navigation by replacing the iframe element
+        // This is the most reliable way to ensure page anchors work
+        const newFrame = document.createElement('iframe');
+        newFrame.id = 'pdf-frame';
+        newFrame.title = 'PDF Viewer';
+        newFrame.src = fullPath;
+        
+        pdfFrame.parentNode.replaceChild(newFrame, pdfFrame);
+        pdfFrame = newFrame; // Update global reference
         
         // Scroll to viewer
         setTimeout(() => {
