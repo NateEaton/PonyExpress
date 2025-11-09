@@ -283,6 +283,131 @@ h2 {
   margin: 0 auto;
 }
 
+/* Catalog Styles */
+.catalog-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.catalog-toggle-btn:hover {
+  background: var(--primary-color-dark);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transform: translateY(-1px);
+}
+
+.catalog-toggle-btn:active {
+  transform: translateY(0);
+}
+
+#toggle-icon {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  min-width: 1rem;
+}
+
+.catalog-content {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-hint {
+  margin-bottom: 1.25rem;
+  padding: 0.75rem 1rem;
+  background: #fff;
+  border-left: 4px solid var(--primary-color);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* DataTables Customization */
+#pony-express-index {
+  background: white;
+  border-radius: 4px;
+}
+
+#pony-express-index thead th {
+  background: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem;
+}
+
+#pony-express-index tbody td {
+  padding: 0.6rem;
+  vertical-align: middle;
+}
+
+.pdf-article-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.pdf-article-link:hover {
+  color: var(--primary-color-dark);
+  text-decoration: underline;
+}
+
+/* DataTables Search Box Styling */
+.dataTables_wrapper .dataTables_filter input {
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.dataTables_wrapper .dataTables_filter input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* DataTables Pagination */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background: var(--primary-color) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: var(--primary-color-light) !important;
+  color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
 /* Instructions */
 ul {
   list-style-position: inside;
@@ -440,6 +565,29 @@ footer a:hover {
   .contact-email {
     font-size: 1rem;
     padding: 0.5rem 0.75rem;
+  }
+
+  /* Catalog Mobile Styles */
+  .catalog-toggle-btn {
+    font-size: 1rem;
+    padding: 0.875rem 1rem;
+  }
+  
+  .catalog-content {
+    padding: 1rem;
+  }
+  
+  .search-hint {
+    font-size: 0.875rem;
+  }
+  
+  #pony-express-index {
+    font-size: 0.875rem;
+  }
+  
+  #pony-express-index thead th,
+  #pony-express-index tbody td {
+    padding: 0.5rem;
   }
 }
 
