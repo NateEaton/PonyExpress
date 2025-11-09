@@ -16,6 +16,36 @@ The goal of this archive is to provide a **free, easily accessible** place for c
 
 ---
 
+## Features
+
+### Interactive Carousel
+Browse all available issues using the visual carousel with left/right navigation arrows. Click any cover to open the full PDF viewer.
+
+### Searchable Catalog
+A comprehensive, searchable index of all articles and photos across all issues. Search by:
+- Names (students, faculty, public figures)
+- Article titles
+- Authors
+- Topics and keywords
+- Organizations and clubs
+- Musical artists mentioned
+
+The catalog uses DataTables for powerful filtering and sorting. Click any article title to jump directly to that page in the PDF viewer.
+
+**Note:** The catalog is intentionally hidden on mobile devices (screens < 768px) since PDFs don't display well in mobile iframes. Mobile users can still browse the carousel and download PDFs to view in their device's native PDF reader.
+
+### PDF Viewer
+Built-in PDF viewer with:
+- Page-specific deep linking (jump to specific pages from catalog)
+- Share functionality (copy direct links to specific issues)
+- Open in new tab option
+- Embedded OCR text for in-PDF searching (Ctrl+F / Cmd+F)
+
+### Analytics
+Privacy-respecting analytics via GoatCounter to track usage without invasive tracking.
+
+---
+
 ## Technical Details
 
 ### Scanning Process
@@ -33,7 +63,10 @@ If you have additional issues to contribute, here's the process and specificatio
 - **Color Mode:** Grayscale
 - **Format:** PDF with embedded OCR text
 - **Cover Format:** PNG image
-- 
+
+**Note on Quality:**
+The scan quality is inherently limited by the physical condition of the original newspapers. OCR accuracy may vary, so catalog searches may not always capture every instance of a name or term that appears in the scanned images.
+
 ### File Naming Convention
 
 Files are named using the publication date in `YYYY-MM-DD.pdf` format:
@@ -45,16 +78,45 @@ Cover images follow the same convention: `YYYY-MM-DD.png`
 
 ```
 PonyExpress/
-├── index.html
-├── style.css
-├── favicon.png
-├── PonyExpressTitle.png
+├── index.html              # Main site page
+├── style.css               # Site styling
+├── index.json              # Catalog metadata for all articles/photos
+├── favicon.png             # Site favicon
+├── PonyExpressTitle.png    # Header logo
 ├── issues/
-│   ├── YYYY-MM-DD.pdf
+│   ├── YYYY-MM-DD.pdf      # Newspaper PDFs
 │   └── covers/
-│       └── YYYY-MM-DD.png
-└── README.md
+│       └── YYYY-MM-DD.png  # Cover thumbnails
+└── README.md               # This file
 ```
+
+### Catalog Data Structure
+
+The `index.json` file contains structured metadata for every article and photo:
+
+```json
+{
+  "data": [
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Editorial",
+      "Title": "Introduction to Volume V1, Number 1",
+      "Page": 2,
+      "Author": "Alice Adams",
+      "Names": ["Alice Adams"],
+      "Topics": ["editorial", "newspaper"],
+      "Organizations": ["Pony Express"],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    }
+  ]
+}
+```
+
+This structured data enables powerful search across all content without requiring full-text indexing of PDFs.
 
 ---
 
@@ -93,27 +155,56 @@ If you have additional issues of *The Pony Express* that you'd like to contribut
      <p class="issue-date">Month DD, YYYY</p>
    </div>
    ```
-5. Commit and push changes to GitHub
-6. Site updates automatically via GitHub Pages
+5. Update `index.json` with metadata for all articles and photos in the new issue (see data structure above)
+6. Commit and push changes to GitHub
+7. Site updates automatically via GitHub Pages
+
+**Updating the Catalog:**
+
+When adding a new issue, you'll need to extract metadata for each article and photo:
+- Issue date and filename
+- Article/photo type (Article, Photo, etc.)
+- Section (Editorial, News, Sports, etc.)
+- Title and page number
+- Author (if bylined)
+- Names mentioned (students, faculty, etc.)
+- Topics/keywords
+- Organizations/clubs mentioned
+- Artists/public figures mentioned
+- Events mentioned
+
+Add each entry to the `data` array in `index.json` following the existing format.
 
 **Basic Troubleshooting:**
 
 - If the site isn't updating: Check GitHub Pages settings in repository settings
 - If PDFs won't load: Verify file paths match exactly (case-sensitive)
 - If carousel isn't working: Check browser console for JavaScript errors
+- If catalog isn't loading: Verify `index.json` is valid JSON (use a JSON validator)
+- If page anchors (#page=X) aren't working: This is a known iframe limitation; the code uses iframe replacement to maximize compatibility
+
+### Technical Stack
+
+- **Frontend:** Pure HTML5, CSS3, and vanilla JavaScript (no build process required)
+- **PDF Display:** Browser-native iframe PDF rendering
+- **Data Table:** [DataTables](https://datatables.net/) 2.0.7 with jQuery
+- **Hosting:** GitHub Pages (static site hosting)
+- **Analytics:** [GoatCounter](https://www.goatcounter.com/) (privacy-friendly)
 
 ### Interested in Collaborating?
 
-This archive is intendeed to be a community effort. Classmates who want to help maintain and expand it are welcome to participate.
+This archive is intended to be a community effort. Classmates who want to help maintain and expand it are welcome to participate.
 
 **We're looking for collaborators who can:**
 - Add new issues to the archive as they become available
+- Extract metadata for catalog entries
 - Help with basic site updates and maintenance
 - Ensure the archive remains accessible for future generations
 
 **What's involved:**
 - Basic familiarity with GitHub (or willingness to learn)
 - Ability to follow the scanning specifications
+- Attention to detail for catalog data entry
 - Commitment to preserving the archive's quality and accessibility
 
 **Time commitment:**
@@ -126,7 +217,7 @@ This archive is intendeed to be a community effort. Classmates who want to help 
 Email **ponyexpressarchive@duck.com** with:
 - Your name and graduating class
 - Your technical comfort level
-- How you'd like to contribute (scanning, technical updates, both)
+- How you'd like to contribute (scanning, technical updates, data entry, etc.)
 - Any relevant experience (photography, archiving, web development, etc.)
 
 We'll set you up as a repository collaborator and provide documentation on how to make updates. The goal is to ensure this archive can be maintained by multiple people and outlast any single contributor.
@@ -139,13 +230,29 @@ We'll set you up as a repository collaborator and provide documentation on how t
 - Create separate pages for each school year
 - Expand beyond 1974–75 if issues from other years become available
 
-**Search Functionality:**
-- Full-text search across all archived PDFs
-- Find specific names, events, or topics across the entire collection
+**Enhanced Search:**
+- Full-text search across PDF content (in addition to catalog metadata)
+- Advanced filtering (date ranges, multiple keywords, etc.)
+- Search result highlighting
 
 **Community Features:**
 - Linked social media group (Facebook?) for newspaper and yearbook staff
 - Platform for sharing memories and connecting with former staff members
+- Comment system for reminiscing about specific articles
+
+**Accessibility Improvements:**
+- Alternative text for all images in PDFs
+- Enhanced mobile experience for catalog browsing
+- Text-only versions of articles for screen readers
+
+---
+
+## Known Limitations
+
+- **PDF Display on Mobile:** PDFs don't render well in iframes on many mobile browsers, so the viewer is hidden on small screens. Mobile users should download PDFs to view in native apps.
+- **OCR Accuracy:** OCR quality depends on the physical condition of the source newspapers. Some text may not be searchable even though it's visible.
+- **Page Anchor Support:** Deep linking to specific PDF pages (#page=X) works in most modern browsers but may not work in all iframe contexts. The code uses iframe replacement to maximize compatibility.
+- **Search Limitations:** Catalog search only includes manually-entered metadata, not full PDF text content.
 
 ---
 
