@@ -466,16 +466,29 @@
         const pdfPath = e.target.dataset.pdf;
         const pageNumber = e.target.dataset.page;
         const issueDate = e.target.dataset.date;
-        
-        // Always reload the PDF even if viewer is already open
-        loadPdfInViewer(pdfPath, issueDate, pageNumber);
-        
-        // Force iframe reload by setting src even if it's the same file
         const fullPath = pageNumber ? `${pdfPath}#page=${pageNumber}` : pdfPath;
-        pdfFrame.src = ''; // Clear first to force reload
+        
+        // Update the current tracking variables
+        currentPdfPath = pdfPath;
+        currentIssueDate = issueDate;
+        
+        // Update title
+        if (pageNumber) {
+          pdfTitle.textContent = `Viewing: ${issueDate} - Page ${pageNumber}`;
+        } else {
+          pdfTitle.textContent = `Viewing: ${issueDate}`;
+        }
+        
+        // Show viewer section
+        pdfViewerSection.style.display = 'block';
+        
+        // Force navigation even if same PDF by adding timestamp to bypass cache
+        pdfFrame.src = fullPath + (fullPath.includes('?') ? '&' : '#') + 't=' + Date.now();
+        
+        // Scroll to viewer
         setTimeout(() => {
-          pdfFrame.src = fullPath;
-        }, 10);
+          pdfViewerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
         
         // Optional: collapse catalog on mobile
         if (window.innerWidth < 768) {
