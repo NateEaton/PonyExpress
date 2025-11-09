@@ -1,193 +1,195 @@
-[
-  {
-    "IssueDate": "1974-09-11",
-    "IssueFile": "1974-09-11.pdf",
-    "Type": "Article",
-    "Section": "Editorial",
-    "Title": "Introduction to Volume V1, Number 1",
-    "Page": 2,
-    "Author": "Alice Adams",
-    "Names": ["Alice Adams"]
-  },
-  {
-    "IssueDate": "1974-09-11",
-    "IssueFile": "1974-09-11.pdf",
-    "Type": "Article",
-    "Section": "Opinions",
-    "Title": "Now comes Jerry (President Gerald Ford)",
-    "Page": 3,
-    "Author": "GLENN HUGHES",
-    "Names": ["GLENN HUGHES", "Gerald Ford", "Richard Nixon"]
-  },
-  {
-    "IssueDate": "1974-09-11",
-    "IssueFile": "1974-09-11.pdf",
-    "Type": "Article",
-    "Section": "Opinions - Inside Views",
-    "Title": "Summer Decisions (Nixon resignation)",
-    "Page": 4,
-    "Author": "RENEE MAREK",
-    "Names": ["RENEE MAREK", "Richard Nixon", "Gerald Ford"]
-  },
-  {
-    "IssueDate": "1974-09-11",
-    "IssueFile": "1974-09-11.pdf",
-    "Type": "Article",
-    "Section": "Opinions - Inside Views",
-    "Title": "Rockefeller - what type of guy is he?",
-    "Page": 4,
-    "Author": "GLENN HUGHES",
-    "Names": ["GLENN HUGHES", "Nelson A. Rockefeller", "Gerald R. Ford"]
-  },
-  {
-    "IssueDate": "1974-09-11",
-    "IssueFile": "1974-09-11.pdf",
-    "Type": "Article",
-    "Section": "News",
-    "Title": "New music assistant (Mrs. Connie Hamrick)",
-    "Page": 5,
-    "Author": "None Listed",
-    "Names": ["Mrs. Connie Hamrick", "Mr. W.A. Tony Anderson", "Mr. Reinsch"]
-  },
-  {
-    "IssueDate": "1974-09-11",
-    "IssueFile": "1974-09-11.pdf",
-    "Type": "Article",
-    "Section": "News",
-    "Title": "New Advisor (Mr. Weldon Strain)",
-    "Page": 5,
-    "Author": "None Listed",
-    "Names": ["Mr. Weldon Strain"]
-  },
-  {
-    "IssueDate": "1974-09-11",
-    "IssueFile": "1974-09-11.pdf",
-    "Type": "Article",
-    "Section": "News",
-    "Title": "New concepts in “Plan A” (Special Education Program)",
-    "Page": 5,
-    "Author": "Dawn Whitney",
-    "Names": ["Dawn Whitney", "Mrs. Clarice Jordan", "Mrs. Mary Ann Webb", "Mrs. Candace Han"]
-  },
-  {
-    "IssueDate": "1974-09-11",
-    "IssueFile": "1974-09-11.pdf",
-    "Type": "Article",
-    "Section": "Bits N Pieces",
-    "Title": "Enchilada scholarship / Homeroom olympics",
-    "Page": 7,
-    "Author": "None Listed",
-    "Names": ["Jan Kirchmeyer", "Mr. Lester Fowler"]
-  },
-  {
-    "IssueDate": "1974-09-11",
-    "IssueFile": "1974-09-11.pdf",
-    "Type": "Article",
-    "Section": "People",
-    "Title": "New teachers remember when... (Profiles)",
-    "Page": 8,
-    "Author": "Multiple",
-    "Names": ["Mrs. Shirley Goolsby", "Mrs. Marjorie Wilson", "Miss Pam Leonard", "Mr. John Klein", "Mrs. Lorraine Mitchell", "Mrs. Linda Stephens", "Mrs. Janice Turner", "Miss Constance Vinson", "Mr. Raymond McFaul", "Mrs. Joe Ann Voscamp", "Mrs. Ellen Cook", "Mrs. Kay Parks"]
-  },
-  {
-    "IssueDate": "1974-09-11",
-    "IssueFile": "1974-09-11.pdf",
-    "Type": "Article",
-    "Section": "Sharps and Flats",
-    "Title": "Richard Betts 'Highway Call' Album Review",
-    "Page": 12,
-    "Author": "RICHARD PRADARITS and PAUL NEELEY",
-    "Names": ["RICHARD PRADARITS", "PAUL NEELEY", "Richard Betts", "Duane Allman"]
-  },
-  {
-    "IssueDate": "1974-09-11",
-    "IssueFile": "1974-09-11.pdf",
-    "Type": "Article",
-    "Section": "Key Notes",
-    "Title": "Dallasite to cut record (Pat McGuire Interview)",
-    "Page": 13,
-    "Author": "RICHARD PRADARITS and PAUL NEELEY",
-    "Names": ["RICHARD PRADARITS", "PAUL NEELEY", "Pat McGuire", "Willis Allen Ramsey"]
-  },
-  {
-    "IssueDate": "1974-09-11",
-    "IssueFile": "1974-09-11.pdf",
-    "Type": "Article",
-    "Section": "Sports",
-    "Title": "Stallions stop Cougars, take 19-9 victory",
-    "Page": 16,
-    "Author": "MARTY MCLENDON",
-    "Names": ["MARTY MCLENDON", "Steve Dailey", "Gary Lacey", "Richard Brown", "Larry Jones", "Steve Ewton"]
-  },
-  
-  {
-    "IssueDate": "1974-09-11",
-    "IssueFile": "1974-09-11.pdf",
-    "Type": "Photo",
-    "Section": "News",
-    "Title": "“Plan A” Teachers (Group Photo)",
-    "Page": 5,
-    "Author": "Photo Caption",
-    "Names": ["Miss Candace Han", "Mrs. Clarice Jordan", "Mrs. Mary Webb"]
-  },
-  {
-    "IssueDate": "1974-09-11",
-    "IssueFile": "1974-09-11.pdf",
-    "Type": "Photo",
-    "Section": "People",
-    "Title": "New Faculty Group Photo",
-    "Page": 8,
-    "Author": "Photo Caption",
-    "Names": ["Mrs. Shirley Goolsby", "Mrs. Linda Stephens", "Mrs. Kay Parks", "Miss Pam Leonard", "Mrs. Ellen Cook", "Mrs. Lorraine Mitchell", "Mrs. Marjorie Wilson", "Miss Constance Vinson", "Mrs. Joe Ann Voskamp", "Coach Brent Thorne", "Mr. Mike Allen", "Mr. Raymond McFaul", "Coach Gary Halliday", "Coach Clell Tarbet", "Mr. John Klien", "Mr. Weldon Strain"]
-  },
-  {
-    "IssueDate": "1974-09-11",
-    "IssueFile": "1974-09-11.pdf",
-    "Type": "Photo",
-    "Section": "People",
-    "Title": "New Faculty High School Headshots (Key on P. 14)",
-    "Page": 9,
-    "Author": "Photo Caption",
-    "Names": ["Mrs. Linda Stephens", "Mrs. Joe Ann Voskamp", "Mrs. Janice Turner", "Mrs. Shirley Goolsby", "Miss Constance Vinson", "Mrs. Lorraine Mitchell", "Mr. John Klien", "Mrs. Majorie Wilson", "Mr. Raymond McFaul", "Mrs. Ellen Cook", "Mrs. Kay Parks", "Miss Pam Leonard"]
-  },
-  {
-    "IssueDate": "1974-09-11",
-    "IssueFile": "1974-09-11.pdf",
-    "Type": "Photo",
-    "Section": "The Spirit People",
-    "Title": "Varsity Cheerleaders (Group Photo)",
-    "Page": 11,
-    "Author": "Photo Caption",
-    "Names": ["Lynn Campbell", "Mary Powell", "Pam McGee", "Rita Hodges", "Pam Potter", "Pam Burkhalter", "Valerie Sheffield", "Pam Baxter", "Debbie Sasser", "Traci Talley"]
-  },
-  {
-    "IssueDate": "1974-09-11",
-    "IssueFile": "1974-09-11.pdf",
-    "Type": "Photo",
-    "Section": "The Spirit People",
-    "Title": "Varsity Majorettes (Group Photo)",
-    "Page": 11,
-    "Author": "Photo Caption",
-    "Names": ["Donna Duke", "Debbie Trower", "Melanie Roden", "Valerie Robertson", "Debbie Waites", "Cindy Phelps", "Donna Miller", "Pat West", "Sylvia Clouse"]
-  },
-  {
-    "IssueDate": "1974-09-11",
-    "IssueFile": "1974-09-11.pdf",
-    "Type": "Photo",
-    "Section": "Action",
-    "Title": "New Coaches Headshots (Thorne, Halliday, Tarbet)",
-    "Page": 14,
-    "Author": "Photo Caption",
-    "Names": ["Brent Thorne", "Gary Halliday", "Clell Tarbet"]
-  },
-  {
-    "IssueDate": "1974-09-11",
-    "IssueFile": "1974-09-11.pdf",
-    "Type": "Photo",
-    "Section": "Sports",
-    "Title": "Football Action: Steve Dailey Carry",
-    "Page": 16,
-    "Author": "Photo Caption",
-    "Names": ["Steve Dailey"]
-  }
-]
+{
+  "data": [
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Editorial",
+      "Title": "Introduction to Volume V1, Number 1",
+      "Page": 2,
+      "Author": "Alice Adams",
+      "Names": ["Alice Adams"]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Opinions",
+      "Title": "Now comes Jerry (President Gerald Ford)",
+      "Page": 3,
+      "Author": "GLENN HUGHES",
+      "Names": ["GLENN HUGHES", "Gerald Ford", "Richard Nixon"]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Opinions - Inside Views",
+      "Title": "Summer Decisions (Nixon resignation)",
+      "Page": 4,
+      "Author": "RENEE MAREK",
+      "Names": ["RENEE MAREK", "Richard Nixon", "Gerald Ford"]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Opinions - Inside Views",
+      "Title": "Rockefeller - what type of guy is he?",
+      "Page": 4,
+      "Author": "GLENN HUGHES",
+      "Names": ["GLENN HUGHES", "Nelson A. Rockefeller", "Gerald R. Ford"]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "News",
+      "Title": "New music assistant (Mrs. Connie Hamrick)",
+      "Page": 5,
+      "Author": "None Listed",
+      "Names": ["Mrs. Connie Hamrick", "Mr. W.A. Tony Anderson", "Mr. Reinsch"]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "News",
+      "Title": "New Advisor (Mr. Weldon Strain)",
+      "Page": 5,
+      "Author": "None Listed",
+      "Names": ["Mr. Weldon Strain"]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "News",
+      "Title": "New concepts in “Plan A” (Special Education Program)",
+      "Page": 5,
+      "Author": "Dawn Whitney",
+      "Names": ["Dawn Whitney", "Mrs. Clarice Jordan", "Mrs. Mary Ann Webb", "Mrs. Candace Han"]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Bits N Pieces",
+      "Title": "Enchilada scholarship / Homeroom olympics",
+      "Page": 7,
+      "Author": "None Listed",
+      "Names": ["Jan Kirchmeyer", "Mr. Lester Fowler"]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "People",
+      "Title": "New teachers remember when... (Profiles)",
+      "Page": 8,
+      "Author": "Multiple",
+      "Names": ["Mrs. Shirley Goolsby", "Mrs. Marjorie Wilson", "Miss Pam Leonard", "Mr. John Klein", "Mrs. Lorraine Mitchell", "Mrs. Linda Stephens", "Mrs. Janice Turner", "Miss Constance Vinson", "Mr. Raymond McFaul", "Mrs. Joe Ann Voscamp", "Mrs. Ellen Cook", "Mrs. Kay Parks"]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Sharps and Flats",
+      "Title": "Richard Betts 'Highway Call' Album Review",
+      "Page": 12,
+      "Author": "RICHARD PRADARITS and PAUL NEELEY",
+      "Names": ["RICHARD PRADARITS", "PAUL NEELEY", "Richard Betts", "Duane Allman"]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Key Notes",
+      "Title": "Dallasite to cut record (Pat McGuire Interview)",
+      "Page": 13,
+      "Author": "RICHARD PRADARITS and PAUL NEELEY",
+      "Names": ["RICHARD PRADARITS", "PAUL NEELEY", "Pat McGuire", "Willis Allen Ramsey"]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Sports",
+      "Title": "Stallions stop Cougars, take 19-9 victory",
+      "Page": 16,
+      "Author": "MARTY MCLENDON",
+      "Names": ["MARTY MCLENDON", "Steve Dailey", "Gary Lacey", "Richard Brown", "Larry Jones", "Steve Ewton"]
+    },
+    
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Photo",
+      "Section": "News",
+      "Title": "“Plan A” Teachers (Group Photo)",
+      "Page": 5,
+      "Author": "Photo Caption",
+      "Names": ["Miss Candace Han", "Mrs. Clarice Jordan", "Mrs. Mary Webb"]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Photo",
+      "Section": "People",
+      "Title": "New Faculty Group Photo",
+      "Page": 8,
+      "Author": "Photo Caption",
+      "Names": ["Mrs. Shirley Goolsby", "Mrs. Linda Stephens", "Mrs. Kay Parks", "Miss Pam Leonard", "Mrs. Ellen Cook", "Mrs. Lorraine Mitchell", "Mrs. Marjorie Wilson", "Miss Constance Vinson", "Mrs. Joe Ann Voskamp", "Coach Brent Thorne", "Mr. Mike Allen", "Mr. Raymond McFaul", "Coach Gary Halliday", "Coach Clell Tarbet", "Mr. John Klien", "Mr. Weldon Strain"]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Photo",
+      "Section": "People",
+      "Title": "New Faculty High School Headshots (Key on P. 14)",
+      "Page": 9,
+      "Author": "Photo Caption",
+      "Names": ["Mrs. Linda Stephens", "Mrs. Joe Ann Voskamp", "Mrs. Janice Turner", "Mrs. Shirley Goolsby", "Miss Constance Vinson", "Mrs. Lorraine Mitchell", "Mr. John Klien", "Mrs. Majorie Wilson", "Mr. Raymond McFaul", "Mrs. Ellen Cook", "Mrs. Kay Parks", "Miss Pam Leonard"]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Photo",
+      "Section": "The Spirit People",
+      "Title": "Varsity Cheerleaders (Group Photo)",
+      "Page": 11,
+      "Author": "Photo Caption",
+      "Names": ["Lynn Campbell", "Mary Powell", "Pam McGee", "Rita Hodges", "Pam Potter", "Pam Burkhalter", "Valerie Sheffield", "Pam Baxter", "Debbie Sasser", "Traci Talley"]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Photo",
+      "Section": "The Spirit People",
+      "Title": "Varsity Majorettes (Group Photo)",
+      "Page": 11,
+      "Author": "Photo Caption",
+      "Names": ["Donna Duke", "Debbie Trower", "Melanie Roden", "Valerie Robertson", "Debbie Waites", "Cindy Phelps", "Donna Miller", "Pat West", "Sylvia Clouse"]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Photo",
+      "Section": "Action",
+      "Title": "New Coaches Headshots (Thorne, Halliday, Tarbet)",
+      "Page": 14,
+      "Author": "Photo Caption",
+      "Names": ["Brent Thorne", "Gary Halliday", "Clell Tarbet"]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Photo",
+      "Section": "Sports",
+      "Title": "Football Action: Steve Dailey Carry",
+      "Page": 16,
+      "Author": "Photo Caption",
+      "Names": ["Steve Dailey"]
+    }
+  ]
+}
