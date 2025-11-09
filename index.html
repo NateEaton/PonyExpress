@@ -6,6 +6,9 @@
   <title>The Pony Express</title>
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
+  
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
 </head>
 <body>
   <header>
@@ -34,6 +37,47 @@
       </p>
     </section>
 
+    <section id="archive-catalog">
+      <h2>Archive Catalog</h2>
+      <p>Looking for a specific person, article, or section? Access the complete searchable index for all issues.</p>
+      
+      <!-- Collapsible trigger -->
+      <button id="catalog-toggle" class="catalog-toggle-btn" aria-expanded="false" aria-controls="catalog-content">
+        <span id="toggle-icon" aria-hidden="true">▶</span>
+        <span>Searchable Article &amp; Photo Index</span>
+      </button>
+      
+      <!-- Collapsible content -->
+      <div id="catalog-content" class="catalog-content" style="display: none;">
+        <p class="search-hint">
+          💡 <strong>Tip:</strong> Search by name, article title, section, author, or topic. 
+          Click any title to view the issue and jump to the page.
+        </p>
+        
+        <table id="pony-express-index" class="display" style="width:100%">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Section</th>
+              <th>Article Title</th>
+              <th>Page</th>
+              <th>Author</th>
+              <th style="display:none;">Names</th>
+              <th style="display:none;">Topics</th>
+              <th style="display:none;">Organizations</th>
+              <th style="display:none;">Artists</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- DataTables will populate this -->
+          </tbody>
+        </table>
+      </div>
+      
+      <hr style="margin-top: 30px;">
+    </section>
+    
     <section>
       <h2>Archive Carousel</h2>
       <p class="archive-notice">
@@ -137,6 +181,7 @@
       <ul>
         <li>Use the left/right arrows to browse covers.</li>
         <li>Click a cover to view the full PDF below.</li>
+        <li>Use the searchable catalog above to find specific articles, photos, or people.</li>
         <li>Use <kbd>Ctrl+F</kbd> (or <kbd>Cmd+F</kbd> on Mac) inside the PDF to search by name or topic.</li>
         <li>Click "Share" to copy a link to a specific issue.</li>
       </ul>
@@ -169,6 +214,13 @@
 
   <script data-goatcounter="https://neatonjr.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+  
+  <!-- jQuery (DataTables dependency) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  
+  <!-- DataTables JavaScript -->
+  <script type="text/javascript" src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
+
   <script>
     // Carousel functionality
     const carousel = document.querySelector('.carousel');
@@ -215,23 +267,38 @@
     let currentPdfPath = '';
     let currentIssueDate = '';
 
+    function loadPdfInViewer(pdfPath, issueDate, pageNumber) {
+      const fullPath = pageNumber ? `${pdfPath}#page=${pageNumber}` : pdfPath;
+      
+      currentPdfPath = pdfPath;
+      currentIssueDate = issueDate;
+      
+      // Load PDF into iframe
+      pdfFrame.src = fullPath;
+      
+      // Update title
+      if (pageNumber) {
+        pdfTitle.textContent = `Viewing: ${issueDate} - Page ${pageNumber}`;
+      } else {
+        pdfTitle.textContent = `Viewing: ${issueDate}`;
+      }
+      
+      // Show viewer section
+      pdfViewerSection.style.display = 'block';
+      
+      // Smooth scroll to viewer
+      setTimeout(() => {
+        pdfViewerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+
+    // Carousel PDF links
     pdfLinks.forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
-        currentPdfPath = this.getAttribute('data-pdf');
-        currentIssueDate = this.getAttribute('data-date') || this.querySelector('img').getAttribute('alt');
-        
-        // Load PDF into iframe
-        pdfFrame.src = currentPdfPath;
-        pdfTitle.textContent = `Viewing: ${currentIssueDate}`;
-        
-        // Show viewer section
-        pdfViewerSection.style.display = 'block';
-        
-        // Smooth scroll to viewer
-        setTimeout(() => {
-          pdfViewerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100);
+        const pdfPath = this.getAttribute('data-pdf');
+        const issueDate = this.getAttribute('data-date');
+        loadPdfInViewer(pdfPath, issueDate, null);
       });
     });
 
@@ -291,6 +358,163 @@
         
         if (matchingLink) {
           matchingLink.click();
+        }
+      }
+    });
+
+    // Catalog collapsible functionality
+    const catalogToggle = document.getElementById('catalog-toggle');
+    const catalogContent = document.getElementById('catalog-content');
+    const toggleIcon = document.getElementById('toggle-icon');
+    let dataTableInitialized = false;
+
+    catalogToggle.addEventListener('click', function() {
+      const isHidden = catalogContent.style.display === 'none';
+      
+      catalogContent.style.display = isHidden ? 'block' : 'none';
+      toggleIcon.textContent = isHidden ? '▼' : '▶';
+      catalogToggle.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+      
+      // Initialize DataTable on first open
+      if (isHidden && !dataTableInitialized) {
+        initializeDataTable();
+        dataTableInitialized = true;
+      }
+    });
+
+    // Initialize DataTable
+    function initializeDataTable() {
+      $('#pony-express-index').DataTable({
+        ajax: 'index.json',
+        pageLength: 10,
+        lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
+        lengthChange: true, // Show page length control
+        order: [[0, 'asc'], [4, 'asc']], // Sort by Date ascending, then Page ascending
+        responsive: true,
+        
+        columns: [
+          { 
+            data: 'IssueDate', 
+            title: 'Date',
+            render: function (data) {
+              return new Date(data).toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric' 
+              });
+            }
+          },
+          { data: 'Type', title: 'Type' },
+          { data: 'Section', title: 'Section' },
+          { 
+            data: null, 
+            title: 'Article Title',
+            render: function (data, type, row) {
+              return '<a href="#" class="pdf-article-link" ' +
+                     'data-pdf="issues/' + row.IssueFile + '" ' +
+                     'data-page="' + row.Page + '" ' +
+                     'data-date="' + new Date(row.IssueDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) + '" ' +
+                     'data-title="' + row.Title + '">' + 
+                     row.Title + '</a>';
+            }
+          },
+          { data: 'Page', title: 'Page' },
+          { data: 'Author', title: 'Author' },
+          
+          // Hidden searchable columns
+          { 
+            data: 'Names', 
+            title: 'Names', 
+            visible: false,
+            render: function(data) {
+              return Array.isArray(data) ? data.join(', ') : '';
+            }
+          },
+          { 
+            data: 'Topics', 
+            title: 'Topics', 
+            visible: false,
+            render: function(data) {
+              return Array.isArray(data) ? data.join(', ') : '';
+            }
+          },
+          { 
+            data: 'Organizations', 
+            title: 'Organizations', 
+            visible: false,
+            render: function(data) {
+              return Array.isArray(data) ? data.join(', ') : '';
+            }
+          },
+          { 
+            data: 'Artists', 
+            title: 'Artists', 
+            visible: false,
+            render: function(data) {
+              return Array.isArray(data) ? data.join(', ') : '';
+            }
+          }
+        ]
+      });
+    }
+
+    // Handle article link clicks from DataTable
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('pdf-article-link')) {
+        e.preventDefault();
+        
+        const pdfPath = e.target.dataset.pdf;
+        const pageNumber = e.target.dataset.page;
+        const issueDate = e.target.dataset.date;
+        const fullPath = pageNumber ? `${pdfPath}#page=${pageNumber}` : pdfPath;
+        
+        // Update the current tracking variables
+        currentPdfPath = pdfPath;
+        currentIssueDate = issueDate;
+        
+        // Update title
+        if (pageNumber) {
+          pdfTitle.textContent = `Viewing: ${issueDate} - Page ${pageNumber}`;
+        } else {
+          pdfTitle.textContent = `Viewing: ${issueDate}`;
+        }
+        
+        // Show viewer section
+        pdfViewerSection.style.display = 'block';
+        
+        // Force reload by using contentWindow.location for better navigation
+        // This works more reliably for PDF page anchors
+        if (pdfFrame.contentWindow) {
+          try {
+            pdfFrame.contentWindow.location.replace(fullPath);
+          } catch(e) {
+            // Fallback if cross-origin, use src replacement
+            const currentSrc = pdfFrame.src;
+            if (currentSrc && currentSrc.split('#')[0] === new URL(fullPath, window.location.href).href.split('#')[0]) {
+              // Same PDF, force reload
+              pdfFrame.src = 'about:blank';
+              setTimeout(() => {
+                pdfFrame.src = fullPath;
+              }, 50);
+            } else {
+              // Different PDF
+              pdfFrame.src = fullPath;
+            }
+          }
+        } else {
+          pdfFrame.src = fullPath;
+        }
+        
+        // Scroll to viewer
+        setTimeout(() => {
+          pdfViewerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+        
+        // Optional: collapse catalog on mobile
+        if (window.innerWidth < 768) {
+          catalogContent.style.display = 'none';
+          toggleIcon.textContent = '▶';
+          catalogToggle.setAttribute('aria-expanded', 'false');
         }
       }
     });
