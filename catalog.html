@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Pony Express Archive Catalog</title>
     
-    <!-- 1. Include jQuery (DataTables dependency) -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawR8zM9E3+S5f/NlW1sC9S9Uq8i3aQ5n/g" crossorigin="anonymous"></script>
+    <!-- 1. Include jQuery (DataTables dependency) - NO INTEGRITY/CROSSORIGIN -->
+    <!-- This is the most likely fix for the "Failed to find a valid digest" error. -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     
     <!-- 2. Include DataTables CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
