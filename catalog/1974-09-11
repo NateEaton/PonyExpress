@@ -1,0 +1,1314 @@
+{
+  "data": [
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Editorial",
+      "Title": "Introduction to Volume V1, Number 1",
+      "Page": 2,
+      "Author": "Alice Adams",
+      "Names": [
+        "Alice Adams"
+      ],
+      "Topics": [
+        "editorial",
+        "newspaper"
+      ],
+      "Organizations": [
+        "Pony Express"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Opinions",
+      "Title": "Now comes Jerry (President Gerald Ford)",
+      "Page": 3,
+      "Author": "GLENN HUGHES",
+      "Names": [
+        "GLENN HUGHES",
+        "Gerald Ford",
+        "Richard Nixon",
+        "Elizabeth Bloomer",
+        "Michael Ford",
+        "Jack Ford",
+        "Steve Ford",
+        "Susan Ford"
+      ],
+      "Topics": [
+        "politics",
+        "political commentary",
+        "current events"
+      ],
+      "Organizations": [],
+      "Artists": [],
+      "PublicFigures": [
+        "Gerald Ford",
+        "Richard Nixon"
+      ],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Opinions - Inside Views",
+      "Title": "Summer Decisions (Nixon resignation)",
+      "Page": 4,
+      "Author": "RENEE MAREK",
+      "Names": [
+        "RENEE MAREK",
+        "Richard Nixon",
+        "Gerald Ford"
+      ],
+      "Topics": [
+        "politics",
+        "political commentary",
+        "current events"
+      ],
+      "Organizations": [],
+      "Artists": [],
+      "PublicFigures": [
+        "Richard Nixon",
+        "Gerald Ford"
+      ],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Opinions - Inside Views",
+      "Title": "Rockefeller - what type of guy is he?",
+      "Page": 4,
+      "Author": "GLENN HUGHES",
+      "Names": [
+        "GLENN HUGHES",
+        "Nelson A. Rockefeller",
+        "Gerald R. Ford",
+        "John D. Rockefeller Jr.",
+        "Abby Greene Aldrick Rockefeller",
+        "Franklin D. Roosevelt",
+        "Barry Goldwater"
+      ],
+      "Topics": [
+        "politics",
+        "political commentary",
+        "profiles"
+      ],
+      "Organizations": [],
+      "Artists": [],
+      "PublicFigures": [
+        "Nelson A. Rockefeller",
+        "Gerald R. Ford",
+        "Franklin D. Roosevelt",
+        "Barry Goldwater"
+      ],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "News",
+      "Title": "New music assistant (Mrs. Connie Hamrick)",
+      "Page": 5,
+      "Author": "",
+      "Names": [
+        "Mrs. Connie Hamrick",
+        "Mr. W.A. Tony Anderson",
+        "Mr. Reinsch",
+        "Mr. Don Hamrick"
+      ],
+      "Topics": [
+        "band",
+        "new teachers",
+        "faculty"
+      ],
+      "Organizations": [
+        "Varsity Band"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "News",
+      "Title": "New Advisor (Mr. Weldon Strain)",
+      "Page": 5,
+      "Author": "",
+      "Names": [
+        "Mr. Weldon Strain"
+      ],
+      "Topics": [
+        "new teachers",
+        "faculty"
+      ],
+      "Organizations": [],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "News",
+      "Title": "New concepts in \"Plan A\" (Special Education Program)",
+      "Page": 5,
+      "Author": "Dawn Whitney",
+      "Names": [
+        "Dawn Whitney",
+        "Mrs. Clarice Jordan",
+        "Mrs. Mary Ann Webb",
+        "Mrs. Candace Han"
+      ],
+      "Topics": [
+        "special education",
+        "plan a program"
+      ],
+      "Organizations": [],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Photo",
+      "Section": "News",
+      "Title": "\"Plan A\" Teachers (Group Photo)",
+      "Page": 5,
+      "Author": "",
+      "Names": [
+        "Miss Candace Han",
+        "Mrs. Clarice Jordan",
+        "Mrs. Mary Webb"
+      ],
+      "Topics": [
+        "special education",
+        "plan a program",
+        "faculty"
+      ],
+      "Organizations": [],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Hodge Podge",
+      "Title": "Band officers chosen",
+      "Page": 6,
+      "Author": "",
+      "Names": [
+        "Brian Grizzard",
+        "Tommy Amador",
+        "Kelly Hatfield",
+        "Cindy Angelo",
+        "Marilyn Nolley",
+        "David Prasifka",
+        "Ted Spillman",
+        "Hank Jones",
+        "David Rickerson"
+      ],
+      "Topics": [
+        "band",
+        "student government"
+      ],
+      "Organizations": [
+        "Varsity Band"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Hodge Podge",
+      "Title": "Orchestra concert planned",
+      "Page": 6,
+      "Author": "",
+      "Names": [
+        "Mr. Weldon Minnich",
+        "Sallie Banks"
+      ],
+      "Topics": [
+        "orchestra",
+        "concert",
+        "performance"
+      ],
+      "Organizations": [
+        "Orchestra"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": [
+        "October 10 Orchestra Concert"
+      ]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Hodge Podge",
+      "Title": "Math Club",
+      "Page": 6,
+      "Author": "",
+      "Names": [
+        "Howard McNeil",
+        "Mr. Ramiro Sanchez"
+      ],
+      "Topics": [
+        "math club"
+      ],
+      "Organizations": [
+        "Slide Rule and Number Sense Club"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Hodge Podge",
+      "Title": "Les Choisis (French Club)",
+      "Page": 6,
+      "Author": "",
+      "Names": [
+        "Linda Duckett"
+      ],
+      "Topics": [
+        "french club",
+        "language club"
+      ],
+      "Organizations": [
+        "Les Choisis",
+        "French Club"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Hodge Podge",
+      "Title": "Debate hosts tournament",
+      "Page": 6,
+      "Author": "",
+      "Names": [
+        "Mrs. Debbie Chapman",
+        "Debbie Vest"
+      ],
+      "Topics": [
+        "debate",
+        "speech"
+      ],
+      "Organizations": [
+        "Debate Department",
+        "Speech and Debate"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": [
+        "September 20-21 Debate Tournament"
+      ]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Hodge Podge",
+      "Title": "Stage Band",
+      "Page": 6,
+      "Author": "",
+      "Names": [
+        "Paul Davis"
+      ],
+      "Topics": [
+        "band",
+        "stage band",
+        "jazz"
+      ],
+      "Organizations": [
+        "Stage Band"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Hodge Podge",
+      "Title": "OEA (Office Education Association)",
+      "Page": 6,
+      "Author": "",
+      "Names": [
+        "Jill Sloan"
+      ],
+      "Topics": [
+        "vocational education",
+        "oea"
+      ],
+      "Organizations": [
+        "Office Education Association",
+        "OEA"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Hodge Podge",
+      "Title": "Choir officers elected",
+      "Page": 6,
+      "Author": "",
+      "Names": [
+        "Steve Ewton",
+        "Garry Eoff",
+        "Lee Pate",
+        "Kay Hundley",
+        "Donna Avon",
+        "Adrian McDonald",
+        "Donna Webb",
+        "Robin Root",
+        "Keith Burnan",
+        "Walter Morris",
+        "Deanna Longshore"
+      ],
+      "Topics": [
+        "choir",
+        "acappella",
+        "student government"
+      ],
+      "Organizations": [
+        "Acappella Choir"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Hodge Podge",
+      "Title": "VICA (Vocational Industrial Clubs of America)",
+      "Page": 6,
+      "Author": "",
+      "Names": [
+        "Mr. Norman McLaren"
+      ],
+      "Topics": [
+        "vocational education",
+        "vica"
+      ],
+      "Organizations": [
+        "VICA",
+        "Vocational Industrial Clubs of America"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Bits N Pieces",
+      "Title": "Enchilada scholarship / Homeroom olympics",
+      "Page": 7,
+      "Author": "",
+      "Names": [
+        "Jan Kirchmeyer",
+        "Mr. Lester Fowler"
+      ],
+      "Topics": [
+        "scholarship",
+        "junior achievement"
+      ],
+      "Organizations": [
+        "Junior Achievement"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": [
+        "Homeroom Olympics"
+      ]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Bits N Pieces",
+      "Title": "Teachers teaching teachers",
+      "Page": 7,
+      "Author": "",
+      "Names": [
+        "Coach Rusty Talbot",
+        "Coach Mike Jenkins",
+        "Mr. Raymond McFaul",
+        "Coach Gus Hernandez",
+        "Mr. Bill Stanglin"
+      ],
+      "Topics": [
+        "faculty",
+        "profiles"
+      ],
+      "Organizations": [],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Bits N Pieces",
+      "Title": "Enrollment rises",
+      "Page": 7,
+      "Author": "",
+      "Names": [],
+      "Topics": [
+        "school policy"
+      ],
+      "Organizations": [],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Bits N Pieces",
+      "Title": "Fowler Father",
+      "Page": 7,
+      "Author": "",
+      "Names": [
+        "Lester Fowler",
+        "Diane Fowler",
+        "Scott Alexander Fowler"
+      ],
+      "Topics": [
+        "faculty"
+      ],
+      "Organizations": [],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "People",
+      "Title": "New teachers remember when... (Profiles)",
+      "Page": 8,
+      "Author": "Multiple",
+      "Names": [
+        "Mrs. Shirley Goolsby",
+        "Mrs. Marjorie Wilson",
+        "Miss Pam Leonard",
+        "Mr. John Klein",
+        "Mrs. Lorraine Mitchell",
+        "Mrs. Linda Stephens",
+        "Mrs. Janice Turner",
+        "Miss Constance Vinson",
+        "Mr. Raymond McFaul",
+        "Mrs. Joe Ann Voscamp",
+        "Mrs. Ellen Cook",
+        "Mrs. Kay Parks"
+      ],
+      "Topics": [
+        "new teachers",
+        "faculty",
+        "profiles"
+      ],
+      "Organizations": [],
+      "Artists": [
+        "Elvis Presley",
+        "Beach Boys",
+        "Four Seasons",
+        "Righteous Brothers",
+        "Beatles",
+        "Animals",
+        "Andy Williams",
+        "Engelbert Humperdink"
+      ],
+      "PublicFigures": [
+        "Paul Newman"
+      ],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Photo",
+      "Section": "People",
+      "Title": "New Faculty Group Photo",
+      "Page": 8,
+      "Author": "",
+      "Names": [
+        "Mrs. Shirley Goolsby",
+        "Mrs. Linda Stephens",
+        "Mrs. Kay Parks",
+        "Miss Pam Leonard",
+        "Mrs. Ellen Cook",
+        "Mrs. Lorraine Mitchell",
+        "Mrs. Marjorie Wilson",
+        "Miss Constance Vinson",
+        "Mrs. Joe Ann Voskamp",
+        "Coach Brent Thorne",
+        "Mr. Mike Allen",
+        "Mr. Raymond McFaul",
+        "Coach Gary Halliday",
+        "Coach Clell Tarbet",
+        "Mr. John Klien",
+        "Mr. Weldon Strain"
+      ],
+      "Topics": [
+        "new teachers",
+        "faculty"
+      ],
+      "Organizations": [],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Photo",
+      "Section": "People",
+      "Title": "New Faculty High School Headshots (Key on P. 14)",
+      "Page": 9,
+      "Author": "",
+      "Names": [
+        "Mrs. Linda Stephens",
+        "Mrs. Joe Ann Voskamp",
+        "Mrs. Janice Turner",
+        "Mrs. Shirley Goolsby",
+        "Miss Constance Vinson",
+        "Mrs. Lorraine Mitchell",
+        "Mr. John Klien",
+        "Mrs. Majorie Wilson",
+        "Mr. Raymond McFaul",
+        "Mrs. Ellen Cook",
+        "Mrs. Kay Parks",
+        "Miss Pam Leonard"
+      ],
+      "Topics": [
+        "new teachers",
+        "faculty"
+      ],
+      "Organizations": [],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "People",
+      "Title": "Mrs. Shirley Goolsby (Profile)",
+      "Page": 8,
+      "Author": "",
+      "Names": [
+        "Mrs. Shirley Goolsby",
+        "Mr. Richard Goolsby"
+      ],
+      "Topics": [
+        "new teachers",
+        "faculty",
+        "profiles"
+      ],
+      "Organizations": [],
+      "Artists": [
+        "Elvis Presley",
+        "Beach Boys",
+        "Four Seasons",
+        "Righteous Brothers",
+        "Fabian"
+      ],
+      "PublicFigures": [
+        "Paul Newman"
+      ],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "People",
+      "Title": "Mrs. Marjorie Wilson (Profile)",
+      "Page": 8,
+      "Author": "",
+      "Names": [
+        "Mrs. Marjorie Wilson"
+      ],
+      "Topics": [
+        "new teachers",
+        "faculty",
+        "profiles"
+      ],
+      "Organizations": [],
+      "Artists": [
+        "Elvis Presley",
+        "Animals"
+      ],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "People",
+      "Title": "Miss Pam Leonard (Profile)",
+      "Page": 8,
+      "Author": "",
+      "Names": [
+        "Miss Pam Leonard"
+      ],
+      "Topics": [
+        "new teachers",
+        "faculty",
+        "profiles"
+      ],
+      "Organizations": [],
+      "Artists": [
+        "Beach Boys"
+      ],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "People",
+      "Title": "Mr. John Klein (Profile)",
+      "Page": 10,
+      "Author": "",
+      "Names": [
+        "Mr. John Klein"
+      ],
+      "Topics": [
+        "new teachers",
+        "faculty",
+        "profiles"
+      ],
+      "Organizations": [
+        "Spanish Club",
+        "Student Council",
+        "Art and Action Club",
+        "Key Club"
+      ],
+      "Artists": [
+        "Beatles"
+      ],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "People",
+      "Title": "Mrs. Lorraine Mitchell (Profile)",
+      "Page": 10,
+      "Author": "",
+      "Names": [
+        "Mrs. Lorraine Mitchell",
+        "Raymond Mitchell"
+      ],
+      "Topics": [
+        "new teachers",
+        "faculty",
+        "profiles"
+      ],
+      "Organizations": [
+        "Spanish Club",
+        "National Honor Society"
+      ],
+      "Artists": [
+        "Beatles"
+      ],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "People",
+      "Title": "Mrs. Linda Stephens (Profile)",
+      "Page": 10,
+      "Author": "",
+      "Names": [
+        "Mrs. Linda Stephens",
+        "Mr. Stephens"
+      ],
+      "Topics": [
+        "new teachers",
+        "faculty",
+        "profiles"
+      ],
+      "Organizations": [
+        "Band",
+        "Student Council",
+        "National Honor Society"
+      ],
+      "Artists": [
+        "Elvis Presley"
+      ],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "People",
+      "Title": "Mrs. Janice Turner (Profile)",
+      "Page": 10,
+      "Author": "",
+      "Names": [
+        "Mrs. Janice Turner",
+        "Mr. Mike Turner"
+      ],
+      "Topics": [
+        "new teachers",
+        "faculty",
+        "profiles"
+      ],
+      "Organizations": [
+        "French Club",
+        "Debate Team",
+        "Pep Club"
+      ],
+      "Artists": [
+        "Andy Williams",
+        "Engelbert Humperdink",
+        "Elvis Presley",
+        "Righteous Brothers"
+      ],
+      "PublicFigures": [
+        "Paul Newman"
+      ],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "People",
+      "Title": "Miss Constance Vinson (Profile)",
+      "Page": 10,
+      "Author": "",
+      "Names": [
+        "Miss Constance Vinson"
+      ],
+      "Topics": [
+        "new teachers",
+        "faculty",
+        "profiles"
+      ],
+      "Organizations": [
+        "Band",
+        "Choir"
+      ],
+      "Artists": [
+        "Beatles",
+        "Beach Boys"
+      ],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "People",
+      "Title": "Mr. Raymond McFaul (Profile)",
+      "Page": 10,
+      "Author": "",
+      "Names": [
+        "Mr. Raymond McFaul"
+      ],
+      "Topics": [
+        "new teachers",
+        "faculty",
+        "profiles"
+      ],
+      "Organizations": [
+        "Band"
+      ],
+      "Artists": [
+        "Elvis Presley",
+        "Mac Davis",
+        "Sly and the Family Stone",
+        "Bette Midler",
+        "Little Richard"
+      ],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "People",
+      "Title": "Mrs. Joe Ann Voscamp (Profile)",
+      "Page": 10,
+      "Author": "",
+      "Names": [
+        "Mrs. Joe Ann Voskamp",
+        "Mr. Don Voskamp"
+      ],
+      "Topics": [
+        "new teachers",
+        "faculty",
+        "profiles"
+      ],
+      "Organizations": [
+        "Band"
+      ],
+      "Artists": [
+        "Frank Sinatra"
+      ],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "People",
+      "Title": "Mrs. Ellen Cook (Profile)",
+      "Page": 10,
+      "Author": "",
+      "Names": [
+        "Mrs. Ellen Cook"
+      ],
+      "Topics": [
+        "new teachers",
+        "faculty",
+        "profiles"
+      ],
+      "Organizations": [
+        "National Honor Society"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "People",
+      "Title": "Mrs. Kay Parks (Profile)",
+      "Page": 15,
+      "Author": "",
+      "Names": [
+        "Mrs. Kay Parks"
+      ],
+      "Topics": [
+        "new teachers",
+        "faculty",
+        "profiles",
+        "track"
+      ],
+      "Organizations": [
+        "Track Team"
+      ],
+      "Artists": [
+        "Beatles",
+        "Righteous Brothers"
+      ],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "The Spirit People",
+      "Title": "New cheerleading coach (Sue Murrey)",
+      "Page": 11,
+      "Author": "",
+      "Names": [
+        "Sue Murrey",
+        "Mrs. Sue Murrey",
+        "Debbie Sasser"
+      ],
+      "Topics": [
+        "cheerleaders",
+        "cheerleading",
+        "faculty"
+      ],
+      "Organizations": [
+        "Varsity Cheerleaders",
+        "Junior Varsity Cheerleaders",
+        "Freshman Cheerleaders"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Photo",
+      "Section": "The Spirit People",
+      "Title": "Varsity Cheerleaders (Group Photo)",
+      "Page": 11,
+      "Author": "",
+      "Names": [
+        "Lynn Campbell",
+        "Mary Powell",
+        "Pam McGee",
+        "Rita Hodges",
+        "Pam Potter",
+        "Pam Burkhalter",
+        "Valerie Sheffield",
+        "Pam Baxter",
+        "Debbie Sasser",
+        "Traci Talley"
+      ],
+      "Topics": [
+        "cheerleaders",
+        "cheerleading"
+      ],
+      "Organizations": [
+        "Varsity Cheerleaders"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "The Spirit People",
+      "Title": "Majorettes win first place",
+      "Page": 11,
+      "Author": "",
+      "Names": [
+        "Melanie Roden",
+        "Pat West",
+        "Cindy Phelps",
+        "Donna Miller",
+        "Debbie Duke",
+        "Donna Duke",
+        "Debbie Waites",
+        "Valerie Robertson",
+        "Debbie Trower",
+        "Sylvia Clouse"
+      ],
+      "Topics": [
+        "majorettes",
+        "twirling",
+        "awards"
+      ],
+      "Organizations": [
+        "Varsity Majorettes"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": [
+        "Southwestern University Tournament"
+      ]
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Photo",
+      "Section": "The Spirit People",
+      "Title": "Varsity Majorettes (Group Photo)",
+      "Page": 11,
+      "Author": "",
+      "Names": [
+        "Donna Duke",
+        "Debbie Trower",
+        "Melanie Roden",
+        "Valerie Robertson",
+        "Debbie Waites",
+        "Cindy Phelps",
+        "Donna Miller",
+        "Pat West",
+        "Sylvia Clouse"
+      ],
+      "Topics": [
+        "majorettes",
+        "twirling"
+      ],
+      "Organizations": [
+        "Varsity Majorettes"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Sharps and Flats",
+      "Title": "Richard Betts 'Highway Call' Album Review",
+      "Page": 12,
+      "Author": "RICHARD PRADARITS and PAUL NEELEY",
+      "Names": [
+        "RICHARD PRADARITS",
+        "PAUL NEELEY",
+        "Richard Betts",
+        "Duane Allman",
+        "Chuck Leavell",
+        "Johny Sandlin",
+        "Vassar Clements",
+        "Stephen Grappeli",
+        "Django Reinhardt"
+      ],
+      "Topics": [
+        "music review",
+        "album review"
+      ],
+      "Organizations": [],
+      "Artists": [
+        "Richard Betts",
+        "Allman Brothers Band",
+        "Django Reinhardt"
+      ],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Key Notes",
+      "Title": "Dallasite to cut record (Pat McGuire Interview)",
+      "Page": 13,
+      "Author": "RICHARD PRADARITS and PAUL NEELEY",
+      "Names": [
+        "RICHARD PRADARITS",
+        "PAUL NEELEY",
+        "Pat McGuire",
+        "Willis Allen Ramsey"
+      ],
+      "Topics": [
+        "music review",
+        "interviews",
+        "profiles"
+      ],
+      "Organizations": [
+        "Blue Knights",
+        "Southern Distributer",
+        "Shades of Contrast",
+        "Joy"
+      ],
+      "Artists": [
+        "Pat McGuire",
+        "Willis Allen Ramsey",
+        "America",
+        "Beatles",
+        "Doors",
+        "Allman Brothers",
+        "Ray Mazerick",
+        "Paul McCartney",
+        "Lynurd Skynyrd"
+      ],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Action",
+      "Title": "New coaches show spirit",
+      "Page": 14,
+      "Author": "JESSIE WHITE",
+      "Names": [
+        "JESSIE WHITE",
+        "Brent Thorne",
+        "Gary Halliday",
+        "Clell Tarbet"
+      ],
+      "Topics": [
+        "football",
+        "basketball",
+        "track",
+        "new teachers",
+        "faculty"
+      ],
+      "Organizations": [
+        "Varsity Track Team",
+        "Freshman Football Team",
+        "Freshman Basketball Team"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Photo",
+      "Section": "Action",
+      "Title": "New Coaches Headshots (Thorne, Halliday, Tarbet)",
+      "Page": 14,
+      "Author": "",
+      "Names": [
+        "Brent Thorne",
+        "Gary Halliday",
+        "Clell Tarbet"
+      ],
+      "Topics": [
+        "football",
+        "basketball",
+        "track",
+        "faculty"
+      ],
+      "Organizations": [],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Action",
+      "Title": "Predicting the Outcomes (Sports predictions)",
+      "Page": 15,
+      "Author": "Randy Fleming, Marty McLendon, Jessie White",
+      "Names": [
+        "Randy Fleming",
+        "Marty McLendon",
+        "Jessie White"
+      ],
+      "Topics": [
+        "football",
+        "sports"
+      ],
+      "Organizations": [],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Action",
+      "Title": "The Sports Scene (District 8-AAAA preview)",
+      "Page": 15,
+      "Author": "MARTY McLENDON",
+      "Names": [
+        "MARTY McLENDON"
+      ],
+      "Topics": [
+        "football",
+        "sports"
+      ],
+      "Organizations": [
+        "Varsity Football Team",
+        "Wilmer-Hutchins High School",
+        "Richardson High School",
+        "North Garland High School",
+        "Richardson Pearce High School",
+        "Lake Highlands High School",
+        "South Garland High School",
+        "Garland High School",
+        "Mesquite High School"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Article",
+      "Section": "Sports",
+      "Title": "Stallions stop Cougars, take 19-9 victory",
+      "Page": 16,
+      "Author": "MARTY McLENDON",
+      "Names": [
+        "MARTY McLENDON",
+        "Steve Dailey",
+        "Gary Lacey",
+        "Richard Brown",
+        "Larry Jones",
+        "Steve Ewton",
+        "Hampton Miller",
+        "Derrick Smith",
+        "Charlie Yoachum",
+        "Don Wafford",
+        "Terry Davis",
+        "David Jennings",
+        "Ted Small",
+        "Mike West"
+      ],
+      "Topics": [
+        "football",
+        "sports"
+      ],
+      "Organizations": [
+        "Varsity Football Team",
+        "Bryan Adams High School"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    },
+    {
+      "IssueDate": "1974-09-11",
+      "IssueFile": "1974-09-11.pdf",
+      "Type": "Photo",
+      "Section": "Sports",
+      "Title": "Football Action: Steve Dailey Carry",
+      "Page": 16,
+      "Author": "",
+      "Names": [
+        "Steve Dailey"
+      ],
+      "Topics": [
+        "football",
+        "sports"
+      ],
+      "Organizations": [
+        "Varsity Football Team"
+      ],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    }
+  ]
+}
