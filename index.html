@@ -64,6 +64,15 @@
           Click any title to view the issue and jump to the page.
         </p>
         
+        <!-- Issue Filter Dropdown -->
+        <div style="margin-bottom: 1rem; padding: 0.75rem; background: white; border: 1px solid #ddd; border-radius: 4px; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+          <label for="issue-filter" style="font-weight: 600; white-space: nowrap;">Jump to Issue:</label>
+          <select id="issue-filter" style="padding: 0.5rem; border: 2px solid #ddd; border-radius: 4px; font-size: 0.95rem; min-width: 200px; flex: 1; max-width: 300px;">
+            <option value="">All Issues</option>
+          </select>
+          <button id="clear-issue-filter" style="padding: 0.5rem 1rem; background: #f0f0f0; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; font-size: 0.95rem; white-space: nowrap; transition: background 0.2s;">Clear Filter</button>
+        </div>
+        
         <table id="pony-express-index" class="display" style="width:100%">
           <thead>
             <tr>
@@ -437,10 +446,40 @@
       });
     }
 
+    // Populate issue filter dropdown with unique dates
+    function populateIssueFilter(data) {
+      const uniqueDates = [...new Set(data.map(item => item.IssueDate))].sort();
+      const select = document.getElementById('issue-filter');
+      
+      // Clear existing options except the first "All Issues" option
+      select.innerHTML = '<option value="">All Issues</option>';
+      
+      uniqueDates.forEach(dateStr => {
+        const date = parseLocalDate(dateStr);
+        const formattedDate = date.toLocaleDateString('en-US', { 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        });
+        
+        const option = document.createElement('option');
+        option.value = dateStr;
+        option.textContent = formattedDate;
+        select.appendChild(option);
+      });
+    }
+
     // Initialize DataTable
     function initializeDataTable() {
-      $('#pony-express-index').DataTable({
-        ajax: 'index.json',
+      const table = $('#pony-express-index').DataTable({
+        ajax: {
+          url: 'index.json',
+          dataSrc: function(json) {
+            // Populate issue filter dropdown after data loads
+            populateIssueFilter(json.data);
+            return json.data;
+          }
+        },
         pageLength: 10,
         lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
         lengthChange: true,
@@ -530,6 +569,19 @@
           }
         ]
       });
+      
+      // Issue filter functionality
+      $('#issue-filter').on('change', function() {
+        const selectedDate = this.value;
+        // Use regex search with exact match for the date
+        table.column(0).search(selectedDate ? '^' + selectedDate + '$' : '', true, false).draw();
+      });
+      
+      // Clear filter button
+      $('#clear-issue-filter').on('click', function() {
+        $('#issue-filter').val('');
+        table.column(0).search('').draw();
+      });
     }
 
     // Handle article link clicks from DataTable
@@ -582,6 +634,17 @@
         }
       }
     });
+
+    // Add hover effect to clear filter button
+    const clearFilterBtn = document.getElementById('clear-issue-filter');
+    if (clearFilterBtn) {
+      clearFilterBtn.addEventListener('mouseenter', function() {
+        this.style.background = '#e0e0e0';
+      });
+      clearFilterBtn.addEventListener('mouseleave', function() {
+        this.style.background = '#f0f0f0';
+      });
+    }
   </script>
 </body>
 </html>
