@@ -6,13 +6,13 @@ You are indexing articles and photos from "The Pony Express," the North Mesquite
 You will receive the text content from a single issue, organized by page number.
 
 ## Output Format
-Generate a JSON array with one object per article or photo. Use this exact structure:
+Generate a JSON array with one object per article, photo, or special entry. Use this exact structure:
 
 ```json
 {
   "IssueDate": "YYYY-MM-DD",
   "IssueFile": "YYYY-MM-DD.pdf",
-  "Type": "Article" | "Photo",
+  "Type": "Article" | "Photo" | "Staff" | "Cover",
   "Section": "string",
   "Title": "string",
   "Page": number,
@@ -37,10 +37,14 @@ Generate a JSON array with one object per article or photo. Use this exact struc
 **Type**: 
 - Use `"Article"` for written content with text/reporting
 - Use `"Photo"` for standalone photos with captions, group photos, action shots
+- Use `"Staff"` for the staff listing (usually on page 2)
+- Use `"Cover"` for the front cover of the issue
 
 **Section**: 
 - Use the section name as printed in the newspaper (e.g., "Sports", "Editorial", "Opinions", "News", "People", "Sharps and Flats")
 - For subsections, use format: "Section - Subsection" (e.g., "Opinions - Inside Views")
+- For Staff entries: use `"Staff"`
+- For Cover entries: use `"Cover"`
 - Common sections: Editorial, Opinions, News, People, Sports, Action, Sharps and Flats, Key Notes, Bits N Pieces, Hodge Podge, The Spirit People
 
 **Title**: 
@@ -51,6 +55,8 @@ Generate a JSON array with one object per article or photo. Use this exact struc
   - "Now comes Jerry (President Gerald Ford)"
   - "Varsity Cheerleaders (Group Photo)"
 - For photo captions without clear titles, create descriptive title: "New Faculty Group Photo"
+- For Staff entries: use format `"Staff (Volume X, Number Y)"`
+- For Cover entries: use format `"Cover (descriptive theme)"` e.g., `"Cover (State Fair)"`, `"Cover (Homecoming)"`
 
 **Page**: The page number where the content appears (as an integer)
 
@@ -60,6 +66,7 @@ Generate a JSON array with one object per article or photo. Use this exact struc
 - **IMPORTANT: If no byline present, use empty string: `""`**
 - **IMPORTANT: For photos, use empty string: `""` (only include photographer name if explicitly credited)**
 - For editorials without bylines, use: `"Editorial Board"`
+- For Staff and Cover entries: always use `""`
 
 ### Discovery Fields (ALWAYS INCLUDE - use empty arrays if none apply)
 
@@ -68,6 +75,8 @@ Generate a JSON array with one object per article or photo. Use this exact struc
 - Include the author(s) in this array
 - Use names exactly as written in the article (with titles/honorifics)
 - For photos: include everyone identified in the caption
+- For Staff entries: include ALL staff members with their titles/honorifics
+- For Cover entries: include any identifiable people
 - Examples: `["GLENN HUGHES", "Gerald Ford", "Richard Nixon"]`
 - Examples: `["Mrs. Shirley Goolsby", "Coach Brent Thorne", "Steve Dailey"]`
 - For "Staff" or group listings: include individual names if provided
@@ -77,12 +86,15 @@ Generate a JSON array with one object per article or photo. Use this exact struc
 - Choose the most specific relevant tags
 - For sports: always include both the sport (`"football"`) and `"sports"`
 - For reviews: include both the type (`"album review"`) and general (`"music review"`)
+- For Staff entries: include `"staff"`, `"newspaper staff"`, and relevant roles like `"photography"`, `"editor"`
+- For Cover entries: include `"cover"` and any themes/events depicted
 - Examples: `["football", "sports"]`, `["band", "marching band"]`, `["politics", "editorial"]`
 
 **Organizations** (HIGH PRIORITY):
 - List all school clubs, teams, departments, or external organizations mentioned
 - Use full, clear names: `"Varsity Football Team"` not just "Varsity"
 - Include opponent schools for sports articles
+- For Staff entries: include `"Pony Express"`
 - Examples: `["Varsity Band", "Stage Band"]`, `["French Club"]`, `["Bryan Adams High School"]`
 
 **Artists** (MEDIUM PRIORITY - mainly for entertainment content):
@@ -102,11 +114,33 @@ Generate a JSON array with one object per article or photo. Use this exact struc
 - Specifically named events with dates/times
 - Examples: `["September 20-21 Debate Tournament"]`, `["Homecoming Dance"]`, `["UIL District Competition"]`
 - Do NOT include: generic references like "football game" or "meeting"
+- For Cover entries: include major events depicted (e.g., `["State Fair of Texas"]`)
 - Leave empty array if not applicable: `[]`
+
+## Special Entry Types
+
+**Staff Listing (Type: "Staff")**
+- Create ONE entry per issue for the staff listing (usually page 2)
+- Title format: `"Staff (Volume X, Number Y)"`
+- Include ALL staff members in the Names array with their titles/honorifics
+- Add relevant role keywords to Topics (e.g., `"staff"`, `"newspaper staff"`, `"editor"`, `"photography"`)
+- Include sponsor, principal, and superintendent if listed
+- Author field: leave empty (`""`)
+
+**Cover (Type: "Cover")**  
+- Create ONE entry per issue for the front cover
+- Title format: `"Cover (descriptive theme)"` e.g., `"Cover (State Fair)"`, `"Cover (Homecoming)"`, `"Cover (Football Season)"`
+- Include notable text/themes in Topics field
+- Note presence of photos/illustrations in Topics (e.g., `"cover"`, `"mascot"`, `"State Fair"`)
+- Include any identifiable people in Names array
+- Include relevant events in Events array
+- Author field: leave empty (`""`)
 
 ## Controlled Vocabulary
 
 ### Topics - Use ONLY these standardized terms:
+
+**Administrative:** staff, newspaper staff, editor, photography, sponsor, administration
 
 **Sports:** football, basketball, baseball, track, volleyball, tennis, golf, cross country, sports (general)
 
@@ -123,6 +157,8 @@ Generate a JSON array with one object per article or photo. Use this exact struc
 **Events:** homecoming, prom, dance, graduation, senior events, awards, scholarship, recognition, assembly, fundraiser
 
 **Editorial:** politics, political commentary, editorial, opinion, commentary, current events, news analysis, school policy
+
+**Visual:** cover, mascot, illustration, photograph
 
 **Other:** new teachers, new students, faculty, profiles, interviews, features, campus improvements, facilities, schedule, calendar
 
@@ -143,6 +179,8 @@ Generate a JSON array with one object per article or photo. Use this exact struc
 7. **Empty arrays/strings, not nulls**: Use `[]` for empty fields, never `null` or omit the field. Use `""` for empty Author field.
 
 8. **Author field**: Leave blank (`""`) unless there is an explicit byline or photographer credit
+
+9. **Always include Staff and Cover**: Every issue should have a Staff entry (usually page 2) and a Cover entry (page 1)
 
 ## Example Entries
 
@@ -241,12 +279,55 @@ Generate a JSON array with one object per article or photo. Use this exact struc
 }
 ```
 
+### Example 6: Staff Entry
+```json
+{
+  "IssueDate": "1974-09-11",
+  "IssueFile": "1974-09-11.pdf",
+  "Type": "Staff",
+  "Section": "Staff",
+  "Title": "Staff (Volume VI, Number 1)",
+  "Page": 2,
+  "Author": "",
+  "Names": ["Alice Adams", "Glenn Hughes", "Renee Marek", "Dawn Whitney", "Andrea Knight", "Don Richerson", "Richard Praderits", "Jessie White", "Nathan Eaton", "Marty Winn", "David Nolen", "Debbie Warren", "Karen Collins", "Cecil Gibbons", "Phyllis Balthrop", "Mrs. Janet Hooper", "Mr. John Campbell", "Dr. Ralph Poteet"],
+  "Topics": ["staff", "newspaper staff", "editor", "photography"],
+  "Organizations": ["Pony Express"],
+  "Artists": [],
+  "PublicFigures": [],
+  "Events": []
+}
+```
+
+### Example 7: Cover Entry
+```json
+{
+  "IssueDate": "1974-10-09",
+  "IssueFile": "1974-10-09.pdf",
+  "Type": "Cover",
+  "Section": "Cover",
+  "Title": "Cover (State Fair)",
+  "Page": 1,
+  "Author": "",
+  "Names": [],
+  "Topics": ["cover", "State Fair", "mascot"],
+  "Organizations": [],
+  "Artists": [],
+  "PublicFigures": [],
+  "Events": ["State Fair of Texas"]
+}
+```
+
 ## Your Task
 
-Given the OCR text from [ISSUE DATE], generate complete JSON catalog entries for all articles and photos. Return ONLY valid JSON with no additional commentary.
+Given the OCR text from [ISSUE DATE], generate complete JSON catalog entries for all articles, photos, AND special entries (Staff and Cover). Return ONLY valid JSON with no additional commentary.
 
 Include the issue metadata at the start:
 - IssueDate: [PROVIDED]
 - IssueFile: [PROVIDED].pdf
+
+Remember to:
+1. Create a Staff entry for the staff listing (usually page 2)
+2. Create a Cover entry for the front page
+3. Catalog all articles and photos as usual
 
 Begin your JSON response now based on the following PDF attachment/link:
