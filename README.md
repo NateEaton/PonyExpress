@@ -18,10 +18,15 @@ The goal of this archive is to provide a **free, easily accessible** place for c
 
 ## Features
 
-### Interactive Carousel
-Browse all available issues using the visual carousel with left/right navigation arrows. Click any cover to open the full PDF viewer.
+### Responsive Design
+The archive automatically adapts to provide an optimal experience on both desktop and mobile devices:
+- **Desktop (≥768px):** Full-featured experience with in-page PDF viewer, searchable catalog, and carousel navigation arrows
+- **Mobile (<768px):** Streamlined interface with swipe-enabled carousel, native PDF viewing in dedicated browser tab, and device-appropriate instructions
 
-### Searchable Catalog
+### Interactive Carousel
+Browse all available issues using the visual carousel. On desktop, use left/right navigation arrows. On mobile, swipe to browse. Click/tap any cover to open the full PDF.
+
+### Searchable Catalog (Desktop)
 A comprehensive, searchable index of all articles and photos across all issues. Search by:
 - Names (students, faculty, public figures)
 - Article titles
@@ -32,14 +37,20 @@ A comprehensive, searchable index of all articles and photos across all issues. 
 
 The catalog uses DataTables for powerful filtering and sorting. Click any article title to jump directly to that page in the PDF viewer.
 
-**Note:** The catalog is intentionally hidden on mobile devices (screens < 768px) since PDFs don't display well in mobile iframes. Mobile users can still browse the carousel and download PDFs to view in their device's native PDF reader.
+**Note:** The catalog is optimized for desktop viewing and hidden on mobile devices. Mobile users can browse the carousel and use their browser's native PDF search within individual issues.
 
 ### PDF Viewer
-Built-in PDF viewer with:
+**Desktop:** Built-in iframe viewer with:
 - Page-specific deep linking (jump to specific pages from catalog)
 - Share functionality (copy direct links to specific issues)
 - Open in new tab option
 - Embedded OCR text for in-PDF searching (Ctrl+F / Cmd+F)
+
+**Mobile:** Optimized for native browser PDF viewing:
+- PDFs open directly in a dedicated browser tab named 'ponyExpressPDF'
+- Multiple selections reuse the same tab to prevent clutter
+- Access to native mobile share/save features
+- Better performance and compatibility on mobile browsers
 
 ### Analytics
 Privacy-respecting analytics via GoatCounter to track usage without invasive tracking.
@@ -79,16 +90,38 @@ Cover images follow the same convention: `YYYY-MM-DD.png`
 ```
 PonyExpress/
 ├── index.html              # Main site page
-├── style.css               # Site styling
+├── style.css               # Site styling with responsive breakpoints
 ├── index.json              # Catalog metadata for all articles/photos
+├── catalog_chat_prompt.md  # AI assistant prompt for cataloging
 ├── favicon.png             # Site favicon
 ├── PonyExpressTitle.png    # Header logo
+├── catalog/                # (Optional) Individual catalog files per issue
+│   └── YYYY-MM-DD.json     # Catalog entries for specific issue
 ├── issues/
 │   ├── YYYY-MM-DD.pdf      # Newspaper PDFs
 │   └── covers/
 │       └── YYYY-MM-DD.png  # Cover thumbnails
 └── README.md               # This file
 ```
+
+### Responsive Design Implementation
+
+The site uses CSS media queries with a 768px breakpoint to provide device-optimized experiences:
+
+**CSS Classes:**
+- `.desktop-only` - Content visible only on screens ≥768px
+- `.mobile-only` - Content visible only on screens <768px
+
+**Device-Specific Features:**
+- **Desktop:** Carousel navigation arrows, searchable catalog, iframe PDF viewer, share buttons
+- **Mobile:** Swipe carousel, hidden catalog with explanatory note, direct PDF tab opening, simplified instructions
+
+**JavaScript Adaptation:**
+The carousel PDF link handler detects screen width and routes to appropriate viewing method:
+- Desktop: Loads PDF in iframe viewer
+- Mobile: Opens PDF in dedicated reusable tab ('ponyExpressPDF')
+
+This ensures optimal performance and user experience on all devices.
 
 ### Catalog Data Structure
 
@@ -155,13 +188,17 @@ If you have additional issues of *The Pony Express* that you'd like to contribut
      <p class="issue-date">Month DD, YYYY</p>
    </div>
    ```
-5. Update `index.json` with metadata for all articles and photos in the new issue (see data structure above)
-6. Commit and push changes to GitHub
-7. Site updates automatically via GitHub Pages
+5. Create catalog entries (manually or using AI - see "Updating the Catalog" below)
+6. Update `index.json` with the new entries
+7. Commit and push changes to GitHub
+8. Site updates automatically via GitHub Pages
 
 **Updating the Catalog:**
 
-When adding a new issue, you'll need to extract metadata for each article and photo:
+When adding a new issue, you'll need to extract metadata for each article and photo. You can do this manually or use AI assistance:
+
+**Manual Entry:**
+For each article/photo, record:
 - Issue date and filename
 - Article/photo type (Article, Photo, etc.)
 - Section (Editorial, News, Sports, etc.)
@@ -174,6 +211,19 @@ When adding a new issue, you'll need to extract metadata for each article and ph
 - Events mentioned
 
 Add each entry to the `data` array in `index.json` following the existing format.
+
+**AI-Assisted Entry (Alternative):**
+To streamline the process, use the AI chat prompt in `catalog_chat_prompt.md`:
+1. Upload the PDF to an AI assistant (like Claude)
+2. Provide the prompt from `catalog_chat_prompt.md`
+3. The AI will return structured JSON entries
+4. Review and refine the output
+5. Add to `index.json`
+
+This significantly reduces cataloging time while maintaining consistency.
+
+**Individual Catalog Files (Optional):**
+You can also store catalog data for each issue separately in `/catalog/YYYY-MM-DD.json` files for easier maintenance and version control, then manually merge entries into `index.json` as needed.
 
 **Basic Troubleshooting:**
 
@@ -197,7 +247,7 @@ This archive is intended to be a community effort. Classmates who want to help m
 
 **We're looking for collaborators who can:**
 - Add new issues to the archive as they become available
-- Extract metadata for catalog entries
+- Extract metadata for catalog entries (manually or using AI assistance)
 - Help with basic site updates and maintenance
 - Ensure the archive remains accessible for future generations
 
@@ -249,10 +299,11 @@ We'll set you up as a repository collaborator and provide documentation on how t
 
 ## Known Limitations
 
-- **PDF Display on Mobile:** PDFs don't render well in iframes on many mobile browsers, so the viewer is hidden on small screens. Mobile users should download PDFs to view in native apps.
+- **Mobile Catalog:** The searchable catalog is hidden on mobile devices (<768px) due to the complexity of the DataTable interface on small screens. Mobile users can browse the carousel and use in-PDF search within individual issues.
 - **OCR Accuracy:** OCR quality depends on the physical condition of the source newspapers. Some text may not be searchable even though it's visible.
-- **Page Anchor Support:** Deep linking to specific PDF pages (#page=X) works in most modern browsers but may not work in all iframe contexts. The code uses iframe replacement to maximize compatibility.
+- **Page Anchor Support:** Deep linking to specific PDF pages (#page=X) works in most modern browsers but may not work in all iframe contexts on desktop. The code uses iframe replacement to maximize compatibility.
 - **Search Limitations:** Catalog search only includes manually-entered metadata, not full PDF text content.
+- **Browser Compatibility:** The site is optimized for modern browsers (Chrome, Firefox, Safari, Edge). Older browsers may have reduced functionality.
 
 ---
 
