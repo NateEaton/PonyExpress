@@ -490,7 +490,23 @@ footer a:hover {
 }
 
 /* Mobile Responsiveness */
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+  
+  .mobile-only {
+    display: block !important;
+  }
+  
   .header-top {
     padding: 1.5rem 0.5rem 1rem;
   }
