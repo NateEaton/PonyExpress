@@ -27,13 +27,19 @@
         This site preserves issues of <strong>The Pony Express</strong> from the 1974–1975 school year.
         Each issue has been scanned and processed with OCR to make the text searchable within the PDF.
       </p>
-      <p>
-        Click any cover below to view the full issue.
+      <p class="desktop-only">
+        Click any cover in the carousel below to open the full issue in the viewer.
+      </p>
+      <p class="mobile-only">
+        Tap any cover in the carousel below to open the full issue in a new tab.
       </p>
       <p style="margin-top: 1rem; padding: 0.75rem; background-color: #fff3cd; border-left: 4px solid #ffc107; font-size: 0.95rem;">
         <strong>Note:</strong> The scan quality of these issues is limited by the physical condition of the original newspapers, 
         which in some cases is not great. This also impacts the quality of the optical character recognition (OCR), 
         so text searches may not always pick up text that is visible on the page.
+      </p>
+      <p class="mobile-only" style="margin-top: 1rem; padding: 0.75rem; background-color: #e3f2fd; border-left: 4px solid #2196f3; font-size: 0.95rem;">
+        <strong>Mobile tip:</strong> PDFs open in your browser's native viewer. Use your device's share menu to save or share issues.
       </p>
     </section>
 
@@ -41,14 +47,18 @@
       <h2>Archive Catalog</h2>
       <p>Looking for a specific person, article, or section? Access the complete searchable index for all issues.</p>
       
+      <p class="mobile-only" style="padding: 0.75rem; background-color: #e3f2fd; border-left: 4px solid #2196f3; font-size: 0.95rem; margin-top: 1rem;">
+        <strong>Note:</strong> The searchable catalog is optimized for desktop viewing. On mobile, browse issues using the carousel below, then use your browser's built-in PDF search.
+      </p>
+      
       <!-- Collapsible trigger -->
-      <button id="catalog-toggle" class="catalog-toggle-btn" aria-expanded="false" aria-controls="catalog-content">
+      <button id="catalog-toggle" class="catalog-toggle-btn desktop-only" aria-expanded="false" aria-controls="catalog-content">
         <span id="toggle-icon" aria-hidden="true">▶</span>
         <span>Searchable Article &amp; Photo Index</span>
       </button>
       
       <!-- Collapsible content -->
-      <div id="catalog-content" class="catalog-content" style="display: none;">
+      <div id="catalog-content" class="catalog-content desktop-only" style="display: none;">
         <p class="search-hint">
           💡 <strong>Tip:</strong> Search by name, article title, section, author, or topic. 
           Click any title to view the issue and jump to the page.
@@ -83,8 +93,33 @@
       <p class="archive-notice">
         <em>Archive under development — additional issues will be added as they become available.</em>
       </p>
+      
+      <!-- Desktop instructions -->
+      <div class="desktop-only" style="margin-bottom: 1rem; padding: 0.75rem; background: #f8f9fa; border-left: 3px solid var(--primary-color); border-radius: 4px;">
+        <strong>How to use:</strong>
+        <ul style="margin: 0.5rem 0 0 1.5rem; padding: 0;">
+          <li>Use the left/right arrows to browse covers</li>
+          <li>Click any cover to open the PDF viewer below</li>
+          <li>Use the searchable catalog above to find specific articles and jump to pages</li>
+          <li>Use <kbd>Ctrl+F</kbd> (or <kbd>Cmd+F</kbd> on Mac) inside the PDF to search by name or topic</li>
+          <li>Click "Share" in the viewer to copy a link to a specific issue</li>
+        </ul>
+      </div>
+      
+      <!-- Mobile instructions -->
+      <div class="mobile-only" style="margin-bottom: 1rem; padding: 0.75rem; background: #f8f9fa; border-left: 3px solid var(--primary-color); border-radius: 4px;">
+        <strong>How to use:</strong>
+        <ul style="margin: 0.5rem 0 0 1.5rem; padding: 0;">
+          <li>Swipe left/right to browse covers</li>
+          <li>Tap any cover to open the PDF in a new tab</li>
+          <li>Multiple selections will reuse the same tab</li>
+          <li>Use your browser's search feature within the PDF to find names or topics</li>
+          <li>Share this page's URL to link others to the archive</li>
+        </ul>
+      </div>
+      
       <div class="carousel-container">
-        <button class="carousel-nav prev" aria-label="Previous">‹</button>
+        <button class="carousel-nav prev desktop-only" aria-label="Previous">‹</button>
         <div class="carousel-wrapper">
           <div class="carousel">
             
@@ -154,12 +189,12 @@
             <!-- Add more carousel items here as you scan more issues -->
           </div>
         </div>
-        <button class="carousel-nav next" aria-label="Next">›</button>
+        <button class="carousel-nav next desktop-only" aria-label="Next">›</button>
       </div>
     </section>
 
-    <!-- PDF Viewer Frame (hidden by default) -->
-    <section id="pdf-viewer-section" style="display: none;">
+    <!-- PDF Viewer Frame (hidden by default, desktop only) -->
+    <section id="pdf-viewer-section" class="desktop-only" style="display: none;">
       <div class="viewer-controls">
         <h2 id="pdf-title">Viewing Issue</h2>
         <div class="viewer-buttons">
@@ -174,17 +209,6 @@
         </div>
       </div>
       <iframe id="pdf-frame" src="" title="PDF Viewer"></iframe>
-    </section>
-
-    <section>
-      <h2>How to Use</h2>
-      <ul>
-        <li>Use the left/right arrows to browse covers.</li>
-        <li>Click a cover to view the full PDF below.</li>
-        <li>Use the searchable catalog above to find specific articles, photos, or people.</li>
-        <li>Use <kbd>Ctrl+F</kbd> (or <kbd>Cmd+F</kbd> on Mac) inside the PDF to search by name or topic.</li>
-        <li>Click "Share" to copy a link to a specific issue.</li>
-      </ul>
     </section>
 
     <section class="contribute-section">
@@ -230,24 +254,28 @@
 
     function updateNavButtons() {
       const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-      prevBtn.disabled = scrollAmount <= 0;
-      nextBtn.disabled = scrollAmount >= maxScroll;
+      if (prevBtn) prevBtn.disabled = scrollAmount <= 0;
+      if (nextBtn) nextBtn.disabled = scrollAmount >= maxScroll;
     }
 
-    prevBtn.addEventListener('click', () => {
-      const itemWidth = carousel.querySelector('.carousel-item').offsetWidth;
-      scrollAmount = Math.max(0, scrollAmount - itemWidth - 20); // 20 is gap
-      carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-      setTimeout(updateNavButtons, 300);
-    });
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        const itemWidth = carousel.querySelector('.carousel-item').offsetWidth;
+        scrollAmount = Math.max(0, scrollAmount - itemWidth - 20); // 20 is gap
+        carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+        setTimeout(updateNavButtons, 300);
+      });
+    }
 
-    nextBtn.addEventListener('click', () => {
-      const itemWidth = carousel.querySelector('.carousel-item').offsetWidth;
-      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-      scrollAmount = Math.min(maxScroll, scrollAmount + itemWidth + 20);
-      carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-      setTimeout(updateNavButtons, 300);
-    });
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        const itemWidth = carousel.querySelector('.carousel-item').offsetWidth;
+        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+        scrollAmount = Math.min(maxScroll, scrollAmount + itemWidth + 20);
+        carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+        setTimeout(updateNavButtons, 300);
+      });
+    }
 
     carousel.addEventListener('scroll', () => {
       scrollAmount = carousel.scrollLeft;
@@ -274,21 +302,23 @@
       currentIssueDate = issueDate;
       
       // Load PDF into iframe
-      pdfFrame.src = fullPath;
+      if (pdfFrame) pdfFrame.src = fullPath;
       
       // Update title
-      if (pageNumber) {
-        pdfTitle.textContent = `Viewing: ${issueDate} - Page ${pageNumber}`;
-      } else {
-        pdfTitle.textContent = `Viewing: ${issueDate}`;
+      if (pdfTitle) {
+        if (pageNumber) {
+          pdfTitle.textContent = `Viewing: ${issueDate} - Page ${pageNumber}`;
+        } else {
+          pdfTitle.textContent = `Viewing: ${issueDate}`;
+        }
       }
       
       // Show viewer section
-      pdfViewerSection.style.display = 'block';
+      if (pdfViewerSection) pdfViewerSection.style.display = 'block';
       
       // Smooth scroll to viewer
       setTimeout(() => {
-        pdfViewerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (pdfViewerSection) pdfViewerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 100);
     }
 
@@ -308,49 +338,55 @@
       });
     });
 
-    closeButton.addEventListener('click', function() {
-      pdfViewerSection.style.display = 'none';
-      pdfFrame.src = '';
-      currentPdfPath = '';
-    });
+    if (closeButton) {
+      closeButton.addEventListener('click', function() {
+        if (pdfViewerSection) pdfViewerSection.style.display = 'none';
+        if (pdfFrame) pdfFrame.src = '';
+        currentPdfPath = '';
+      });
+    }
 
-    openNewTabBtn.addEventListener('click', function() {
-      if (currentPdfPath) {
-        window.open(currentPdfPath, '_blank');
-      }
-    });
-
-    shareBtn.addEventListener('click', async function() {
-      if (currentPdfPath) {
-        const shareUrl = `${window.location.origin}${window.location.pathname}?issue=${encodeURIComponent(currentPdfPath)}`;
-        
-        try {
-          if (navigator.share) {
-            // Use native share on mobile
-            await navigator.share({
-              title: `The Pony Express - ${currentIssueDate}`,
-              text: `Check out this issue of The Pony Express from ${currentIssueDate}`,
-              url: shareUrl
-            });
-          } else {
-            // Fallback: copy to clipboard
-            await navigator.clipboard.writeText(shareUrl);
-            
-            // Show feedback
-            const originalText = shareBtn.innerHTML;
-            shareBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M13.5 2L6 9.5 2.5 6"/></svg> Copied!';
-            shareBtn.style.background = '#28a745';
-            
-            setTimeout(() => {
-              shareBtn.innerHTML = originalText;
-              shareBtn.style.background = '';
-            }, 2000);
-          }
-        } catch (err) {
-          console.error('Share failed:', err);
+    if (openNewTabBtn) {
+      openNewTabBtn.addEventListener('click', function() {
+        if (currentPdfPath) {
+          window.open(currentPdfPath, '_blank');
         }
-      }
-    });
+      });
+    }
+
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async function() {
+        if (currentPdfPath) {
+          const shareUrl = `${window.location.origin}${window.location.pathname}?issue=${encodeURIComponent(currentPdfPath)}`;
+          
+          try {
+            if (navigator.share) {
+              // Use native share on mobile
+              await navigator.share({
+                title: `The Pony Express - ${currentIssueDate}`,
+                text: `Check out this issue of The Pony Express from ${currentIssueDate}`,
+                url: shareUrl
+              });
+            } else {
+              // Fallback: copy to clipboard
+              await navigator.clipboard.writeText(shareUrl);
+              
+              // Show feedback
+              const originalText = shareBtn.innerHTML;
+              shareBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M13.5 2L6 9.5 2.5 6"/></svg> Copied!';
+              shareBtn.style.background = '#28a745';
+              
+              setTimeout(() => {
+                shareBtn.innerHTML = originalText;
+                shareBtn.style.background = '';
+              }, 2000);
+            }
+          } catch (err) {
+            console.error('Share failed:', err);
+          }
+        }
+      });
+    }
 
     // Check URL for shared issue on page load
     window.addEventListener('DOMContentLoaded', function() {
@@ -379,19 +415,21 @@
     const toggleIcon = document.getElementById('toggle-icon');
     let dataTableInitialized = false;
 
-    catalogToggle.addEventListener('click', function() {
-      const isHidden = catalogContent.style.display === 'none';
-      
-      catalogContent.style.display = isHidden ? 'block' : 'none';
-      toggleIcon.textContent = isHidden ? '▼' : '▶';
-      catalogToggle.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
-      
-      // Initialize DataTable on first open
-      if (isHidden && !dataTableInitialized) {
-        initializeDataTable();
-        dataTableInitialized = true;
-      }
-    });
+    if (catalogToggle) {
+      catalogToggle.addEventListener('click', function() {
+        const isHidden = catalogContent.style.display === 'none';
+        
+        catalogContent.style.display = isHidden ? 'block' : 'none';
+        toggleIcon.textContent = isHidden ? '▼' : '▶';
+        catalogToggle.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+        
+        // Initialize DataTable on first open
+        if (isHidden && !dataTableInitialized) {
+          initializeDataTable();
+          dataTableInitialized = true;
+        }
+      });
+    }
 
     // Initialize DataTable
     function initializeDataTable() {
@@ -484,32 +522,36 @@
         currentIssueDate = issueDate;
         
         // Update title
-        if (pageNumber) {
-          pdfTitle.textContent = `Viewing: ${issueDate} - Page ${pageNumber}`;
-        } else {
-          pdfTitle.textContent = `Viewing: ${issueDate}`;
+        if (pdfTitle) {
+          if (pageNumber) {
+            pdfTitle.textContent = `Viewing: ${issueDate} - Page ${pageNumber}`;
+          } else {
+            pdfTitle.textContent = `Viewing: ${issueDate}`;
+          }
         }
         
         // Show viewer section
-        pdfViewerSection.style.display = 'block';
+        if (pdfViewerSection) pdfViewerSection.style.display = 'block';
         
         // Force proper navigation by replacing the iframe element
         // This is the most reliable way to ensure page anchors work
-        const newFrame = document.createElement('iframe');
-        newFrame.id = 'pdf-frame';
-        newFrame.title = 'PDF Viewer';
-        newFrame.src = fullPath;
-        
-        pdfFrame.parentNode.replaceChild(newFrame, pdfFrame);
-        pdfFrame = newFrame; // Update global reference
+        if (pdfFrame) {
+          const newFrame = document.createElement('iframe');
+          newFrame.id = 'pdf-frame';
+          newFrame.title = 'PDF Viewer';
+          newFrame.src = fullPath;
+          
+          pdfFrame.parentNode.replaceChild(newFrame, pdfFrame);
+          pdfFrame = newFrame; // Update global reference
+        }
         
         // Scroll to viewer
         setTimeout(() => {
-          pdfViewerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (pdfViewerSection) pdfViewerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 100);
         
         // Optional: collapse catalog on mobile
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 768 && catalogContent && toggleIcon && catalogToggle) {
           catalogContent.style.display = 'none';
           toggleIcon.textContent = '▶';
           catalogToggle.setAttribute('aria-expanded', 'false');
