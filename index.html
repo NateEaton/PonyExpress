@@ -245,6 +245,13 @@
   <script type="text/javascript" src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
 
   <script>
+    // ===== HELPER FUNCTION: Parse date without timezone issues =====
+    function parseLocalDate(dateString) {
+      // Parse YYYY-MM-DD as local date (not UTC)
+      const [year, month, day] = dateString.split('-').map(Number);
+      return new Date(year, month - 1, day);
+    }
+
     // Carousel functionality
     const carousel = document.querySelector('.carousel');
     const prevBtn = document.querySelector('.carousel-nav.prev');
@@ -436,7 +443,7 @@
         ajax: 'index.json',
         pageLength: 10,
         lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
-        lengthChange: true, // Show page length control
+        lengthChange: true,
         order: [[0, 'asc'], [4, 'asc']], // Sort by Date ascending, then Page ascending
         responsive: true,
         
@@ -444,8 +451,15 @@
           { 
             data: 'IssueDate', 
             title: 'Date',
-            render: function (data) {
-              return new Date(data).toLocaleDateString('en-US', { 
+            type: 'date', // Tell DataTables this is a date column
+            render: function (data, type, row) {
+              // For sorting and filtering, use the ISO date string
+              if (type === 'sort' || type === 'type') {
+                return data;
+              }
+              // For display, format nicely using local date parsing
+              const date = parseLocalDate(data);
+              return date.toLocaleDateString('en-US', { 
                 year: 'numeric', 
                 month: 'short', 
                 day: 'numeric' 
@@ -458,12 +472,24 @@
             data: null, 
             title: 'Article Title',
             render: function (data, type, row) {
-              return '<a href="#" class="pdf-article-link" ' +
-                     'data-pdf="issues/' + row.IssueFile + '" ' +
-                     'data-page="' + row.Page + '" ' +
-                     'data-date="' + new Date(row.IssueDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) + '" ' +
-                     'data-title="' + row.Title + '">' + 
-                     row.Title + '</a>';
+              // For display, create the link
+              if (type === 'display') {
+                const date = parseLocalDate(row.IssueDate);
+                const formattedDate = date.toLocaleDateString('en-US', { 
+                  year: 'numeric', 
+                  month: 'short', 
+                  day: 'numeric' 
+                });
+                
+                return '<a href="#" class="pdf-article-link" ' +
+                       'data-pdf="issues/' + row.IssueFile + '" ' +
+                       'data-page="' + row.Page + '" ' +
+                       'data-date="' + formattedDate + '" ' +
+                       'data-title="' + row.Title + '">' + 
+                       row.Title + '</a>';
+              }
+              // For sorting/filtering, return just the title
+              return row.Title;
             }
           },
           { data: 'Page', title: 'Page' },
@@ -533,7 +559,6 @@
         if (pdfViewerSection) pdfViewerSection.style.display = 'block';
         
         // Force proper navigation by replacing the iframe element
-        // This is the most reliable way to ensure page anchors work
         if (pdfFrame) {
           const newFrame = document.createElement('iframe');
           newFrame.id = 'pdf-frame';
@@ -541,7 +566,7 @@
           newFrame.src = fullPath;
           
           pdfFrame.parentNode.replaceChild(newFrame, pdfFrame);
-          pdfFrame = newFrame; // Update global reference
+          pdfFrame = newFrame;
         }
         
         // Scroll to viewer
