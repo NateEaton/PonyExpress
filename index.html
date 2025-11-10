@@ -573,8 +573,19 @@
       // Issue filter functionality
       $('#issue-filter').on('change', function() {
         const selectedDate = this.value;
-        // Use regex search with exact match for the date
-        table.column(0).search(selectedDate ? '^' + selectedDate + '$' : '', true, false).draw();
+        if (selectedDate) {
+          // Format the selected date to match the display format
+          const date = parseLocalDate(selectedDate);
+          const formattedDate = date.toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'short', 
+            day: 'numeric' 
+          });
+          // Search for the formatted date in the displayed column
+          table.column(0).search('^' + formattedDate.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$', true, false).draw();
+        } else {
+          table.column(0).search('').draw();
+        }
       });
       
       // Clear filter button
