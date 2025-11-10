@@ -1,0 +1,19 @@
+{
+  "IssueDate": "1974-09-11",
+  "IssueFile": "1974-09-11.pdf",
+  "entries": [
+    {
+      "Type": "Article",
+      "Section": "Editorial",
+      "Title": "Example Article Title",
+      "Page": 2,
+      "Author": "Author Name",
+      "Names": ["Author Name", "Person Mentioned"],
+      "Topics": ["topic1", "topic2"],
+      "Organizations": ["Organization Name"],
+      "Artists": [],
+      "PublicFigures": [],
+      "Events": []
+    }
+  ]
+}
